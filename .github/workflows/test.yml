@@ -4,21 +4,56 @@ on: # rebuild any PRs and main branch changes
   push:
     branches:
       - main
-      - 'releases/*'
+
+  workflow_dispatch:
 
 jobs:
-  build: # make sure build/ci work properly
-    runs-on: ubuntu-latest
+  build:
+    runs-on: macos-11
     steps:
-      - uses: actions/checkout@v2
-      - run: |
-          npm install
-      - run: |
-          npm run all
-  test: # make sure the action works on a clean machine without building
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: ./
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
         with:
-          milliseconds: 1000
+          node-version: 12.x
+
+      - uses: actions/checkout@v2
+      - run: yarn install
+      - name: unit test
+        env:
+          BUNDLE_ID: 'com.github.poad.*'
+          PROFILE_TYPE: 'IOS_APP_ADHOC'
+          ISSUER_ID: ${{ secrets.APPSTORE_ISSUER_ID }}
+          API_KEY_ID: ${{ secrets.APPSTORE_KEY_ID }}
+          API_PRIVATE_KEY: ${{ secrets.API_PRIVATE_KEY }}
+        run: yarn all
+
+  test:
+    runs-on: macos-11
+    steps:
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+
+      - uses: actions/checkout@v2
+      - name: case on memory
+        uses: ./
+        with:
+          bundle-id: 'com.github.poad.*'
+          profile-type: 'IOS_APP_ADHOC'
+          issuer-id: ${{ secrets.APPSTORE_ISSUER_ID }}
+          api-key-id: ${{ secrets.APPSTORE_KEY_ID }}
+          api-private-key: ${{ secrets.API_PRIVATE_KEY }}
+
+  configure:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Pull request auto merge enabler
+      if: github.event_name == 'pull_request'
+      uses: poad/github-pull-request-auto-merge-enable-action@v1.0.0
+      with:
+        pull_request_id: ${{ github.event.pull_request.node_id }}
+        github_token: ${{ secrets.PERSONAL_TOKEN_FOR_GITHUB_ACTIONS }}
+        repository: ${{ github.event.repository.name }}
+        owner: ${{ github.repository_owner }}
+        merge_method: SQUASH
