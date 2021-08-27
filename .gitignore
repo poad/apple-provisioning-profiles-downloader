@@ -69,31 +69,42 @@ typings/
 .env
 .env.test
 
-# parcel-bundler cache (https://parceljs.org/)
-.cache
-
-# next.js build output
-.next
-
-# nuxt.js build output
-.nuxt
-
-# vuepress build output
-.vuepress/dist
-
-# Serverless directories
-.serverless/
-
-# FuseBox cache
-.fusebox/
-
-# DynamoDB Local files
-.dynamodb/
-
 # OS metadata
 .DS_Store
 Thumbs.db
 
 # Ignore built ts files
 __tests__/runner/*
-lib/**/*
+lib/**/*.map
+dist
+
+!node_modules/.bin
+!node_modules/@actions
+!node_modules/@types
+!node_modules/appstore-connect-jwt-generator-core
+!node_modules/appstore-connect-jwt-generator-core/dist
+!node_modules/buffer-equal-constant-time
+!node_modules/date-format
+!node_modules/debug
+!node_modules/ecdsa-sig-formatter
+!node_modules/flatted
+!node_modules/fs-extra
+!node_modules/graceful-fs
+!node_modules/jsonfile
+!node_modules/jsonwebtoken
+!node_modules/jwa
+!node_modules/jws
+!node_modules/lodash.includes
+!node_modules/lodash.isboolean
+!node_modules/lodash.isinteger
+!node_modules/lodash.isnumber
+!node_modules/lodash.isplainobject
+!node_modules/lodash.isstring
+!node_modules/lodash.once
+!node_modules/log4js
+!node_modules/ms
+!node_modules/node-fetch
+!node_modules/rfdc
+!node_modules/safe-buffer
+!node_modules/streamroller
+!node_modules/universalify
