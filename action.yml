@@ -1,4 +1,4 @@
-name: 'Download Apple Provisioning Profiles'
+name: 'Apple Provisioning Profiles Downloader'
 description: 'Downloads an Apple Provisioning Profiles from the AppStore Connect API'
 author: 'Kenji Saito'
 inputs:
