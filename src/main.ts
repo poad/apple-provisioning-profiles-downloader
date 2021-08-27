@@ -7,21 +7,52 @@ import appStoreConnect from './client'
 
 const run = async (): Promise<void> => {
   try {
-    const bundleId: string = core.getInput('bundle-id')
-    const apiKeyId = core.getInput('api-key-id')
-    const issuerId = core.getInput('issuer-id')
-    const profileType = core.getInput('profile-type')
-    const apiPrivateKey = core.getInput('api-private-key')
-    const apiPrivateKeyFile = core.getInput('api-private-key-file')
+    const bundleId: string = core.getInput('bundle-id', {
+      required: true,
+      trimWhitespace: true
+    })
+    const apiKeyId = core.getInput('api-key-id', {
+      required: true,
+      trimWhitespace: true
+    })
+    const issuerId = core.getInput('issuer-id', {
+      required: true,
+      trimWhitespace: true
+    })
+    const profileType = core.getInput('profile-type', {
+      required: false,
+      trimWhitespace: true
+    })
+    const apiPrivateKey = core.getInput('api-private-key', {
+      required: false,
+      trimWhitespace: true
+    })
+    const apiPrivateKeyFile = core.getInput('api-private-key-file', {
+      required: false,
+      trimWhitespace: true
+    })
+    const tokenDuration = core.getInput('token-duration', {
+      required: false,
+      trimWhitespace: true
+    })
 
-    if (apiPrivateKey === undefined || apiPrivateKey.length === 0) {
+    if (apiPrivateKey.length === 0) {
       const keyPath = path.resolve(__dirname, apiPrivateKeyFile)
       const apiPrivateKeyFileCheck = fs.statSync(keyPath).isFile() || false
       if (!apiPrivateKeyFileCheck) {
         throw new Error(
-          "Specify either 'api-private-key' or 'api-private-key-file'。"
+          "Specify either 'api-private-key' or 'api-private-key-file'."
         )
       }
+    }
+
+    if (tokenDuration !== '' && Number.isNaN(tokenDuration)) {
+      throw new Error("The 'token-duration' must be an integer value.")
+    }
+
+    const duration = tokenDuration !== '' ? Number(tokenDuration) : undefined
+    if (duration !== undefined && (duration < 1 || duration > 1200)) {
+      throw new Error("The 'token-duration' must be in the range of 1 to 1200.")
     }
 
     if (!process.env.HOME) {
@@ -34,6 +65,7 @@ const run = async (): Promise<void> => {
     core.info(`profile-type: ${profileType}`)
     core.info(`api-private-key: ${apiPrivateKey ? 'specified' : undefined}`)
     core.info(`api-private-key-file: ${apiPrivateKeyFile}`)
+    core.info(`token-duration: ${tokenDuration}`)
 
     const privateKey =
       apiPrivateKey || fs.readFileSync(path.resolve(apiPrivateKeyFile))
@@ -41,7 +73,8 @@ const run = async (): Promise<void> => {
     const client = appStoreConnect.Client({
       privateKey,
       issuerId,
-      apiKeyId
+      apiKeyId,
+      duration
     })
 
     const response = await client.listBundleIds({

@@ -1,4 +1,4 @@
-import {BundleIdsResponse, ErrorResponse} from './types'
+import {BundleIdsResponse} from './types'
 import token from 'appstore-connect-jwt-generator-core'
 import fetch from 'node-fetch'
 
@@ -37,14 +37,15 @@ module appStoreConnect {
     privateKey: string | Buffer
     issuerId: string
     apiKeyId: string
+    duration?: number
   }): {
     listBundleIds: (query?: {
       [key: string]: string
     }) => Promise<BundleIdsResponse>
     token: () => string
   } => {
-    const {privateKey, issuerId, apiKeyId} = param
-    jwt = token.tokenSync(privateKey, issuerId, apiKeyId)
+    const {privateKey, issuerId, apiKeyId, duration} = param
+    jwt = token.tokenSync(privateKey, issuerId, apiKeyId, duration)
     return {
       listBundleIds,
       token: () => jwt
