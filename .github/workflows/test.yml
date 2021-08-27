@@ -25,7 +25,7 @@ jobs:
           ISSUER_ID: ${{ secrets.APPSTORE_ISSUER_ID }}
           API_KEY_ID: ${{ secrets.APPSTORE_KEY_ID }}
           API_PRIVATE_KEY: ${{ secrets.API_PRIVATE_KEY }}
-        run: yarn all
+        run: npm run all
 
   test:
     runs-on: macos-11
@@ -44,6 +44,20 @@ jobs:
           issuer-id: ${{ secrets.APPSTORE_ISSUER_ID }}
           api-key-id: ${{ secrets.APPSTORE_KEY_ID }}
           api-private-key: ${{ secrets.API_PRIVATE_KEY }}
+
+      - name: prepare case file
+        run: |
+          echo "${{ secrets.API_PRIVATE_KEY }}" > $(pwd)/private-key.p8
+          echo "API_PRIVATE_KEY_FILE=$(pwd)/private-key.p8" >> $GITHUB_ENV
+
+      - name: case file
+        uses: ./
+        with:
+          bundle-id: 'com.github.poad.*'
+          profile-type: 'IOS_APP_ADHOC'
+          issuer-id: ${{ secrets.APPSTORE_ISSUER_ID }}
+          api-key-id: ${{ secrets.APPSTORE_KEY_ID }}
+          api-private-key-file: ${{ env.API_PRIVATE_KEY_FILE }}
 
   configure:
     runs-on: ubuntu-latest

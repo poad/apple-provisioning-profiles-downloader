@@ -36,8 +36,7 @@ const run = async (): Promise<void> => {
     core.info(`api-private-key-file: ${apiPrivateKeyFile}`)
 
     const privateKey =
-      apiPrivateKey ||
-      fs.readFileSync(path.resolve(__dirname, apiPrivateKeyFile))
+      apiPrivateKey || fs.readFileSync(path.resolve(apiPrivateKeyFile))
 
     const client = appStoreConnect.Client({
       privateKey,
@@ -121,9 +120,14 @@ const run = async (): Promise<void> => {
         })
       )
     )
-  } catch (error) {
-    core.error(error)
-    core.setFailed(error.message)
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      core.error(error)
+      core.setFailed(error.message)
+    } else {
+      core.error(JSON.stringify(error))
+      core.setFailed(JSON.stringify(error))
+    }
   }
 }
 
