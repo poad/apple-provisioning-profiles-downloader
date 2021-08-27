@@ -45,6 +45,18 @@ jobs:
           api-key-id: ${{ secrets.APPSTORE_KEY_ID }}
           api-private-key: ${{ secrets.API_PRIVATE_KEY }}
 
+      - name: prepare case file
+        run: echo ${{ secrets.API_PRIVATE_KEY }} > ./private-key.p8
+
+      - name: case file
+        uses: ./
+        with:
+          bundle-id: 'com.github.poad.*'
+          profile-type: 'IOS_APP_ADHOC'
+          issuer-id: ${{ secrets.APPSTORE_ISSUER_ID }}
+          api-key-id: ${{ secrets.APPSTORE_KEY_ID }}
+          api-private-key-file: ./private-key.p8
+
   configure:
     runs-on: ubuntu-latest
     steps:
