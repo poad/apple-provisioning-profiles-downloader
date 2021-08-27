@@ -64,3 +64,28 @@ test('token test', async () => {
   expect(data).not.toBeNull()
   expect(data.length).toBeGreaterThan(0)
 })
+
+test('token duration test', () => {
+  const tmp = fs.mkdtempSync(`${os.tmpdir()}/`, {encoding: 'utf8'})
+
+  process.env['HOME'] = tmp
+  const apiKeyId = process.env.API_KEY_ID!
+  const issuerId = process.env.ISSUER_ID!
+  const privateKey = process.env.API_PRIVATE_KEY!
+
+  const client = appStoreConnect.Client({
+    privateKey,
+    issuerId,
+    apiKeyId,
+    duration: 600
+  })
+
+  const token = client.token()
+  expect(token).not.toBeUndefined()
+  expect(token).not.toBeNull()
+
+  const decoded = jwt.decode(token, {json: true})
+  expect(decoded).not.toBeNull()
+  expect(decoded!.exp! - decoded!.iat!).toBe(600)
+  expect(decoded!.iss!).toBe(issuerId)
+})

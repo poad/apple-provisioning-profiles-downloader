@@ -20,6 +20,9 @@ inputs:
   api-private-key-file:
     description: 'The PKCS8 format Private Key file for AppStore Connect API'
     required: false
+  token-duration:
+    description: 'Number of seconds for the token duration for AppStore Connect API. Maximum: 1200. default: 500'
+    required: false
 outputs:
   profiles:
     description: 'A JSON string containing an array of objects with the `name`, `udid`, and `type` of the provisioning profiles downloaded.'
