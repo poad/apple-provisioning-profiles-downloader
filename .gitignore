@@ -85,7 +85,6 @@ dist
 !node_modules/appstore-connect-jwt-generator-core/dist
 !node_modules/buffer-equal-constant-time
 !node_modules/date-format
-!node_modules/debug
 !node_modules/ecdsa-sig-formatter
 !node_modules/flatted
 !node_modules/fs-extra
