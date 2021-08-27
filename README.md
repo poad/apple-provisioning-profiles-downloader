@@ -2,11 +2,11 @@
 
 [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](LICENSE)
 [![PRs welcome!](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
-[![version](https://img.shields.io/github/tag/v/poad/download-provisioning-profiles)]
+[![version](https://img.shields.io/github/tag/v/poad/download-provisioning-profiles?sort=semver)](VERSION)
 
 I am referring to [Apple-Actions/download-provisioning-profiles](https://github.com/Apple-Actions/download-provisioning-profiles).
 
-## Usage:
+## Usage
 
 ### API Private Key from GitHub Secrets
 
@@ -17,7 +17,7 @@ jobs:
     steps:
     - name: 'Download Provisioning Profiles'
       id: provisioning
-      uses: poad/download-provisioning-profiles@v1
+      uses: poad/download-provisioning-profiles@v1.0.0
       with: 
         bundle-id: 'com.example.App'
         profile-type: 'IOS_APP_STORE'
@@ -38,7 +38,7 @@ jobs:
     steps:
     - name: 'Download Provisioning Profiles'
       id: provisioning
-      uses: poad/download-provisioning-profiles@v1
+      uses: poad/download-provisioning-profiles@v1.0.0
       with: 
         bundle-id: 'com.example.App'
         profile-type: 'IOS_APP_STORE'
@@ -64,4 +64,4 @@ We welcome your interest in contributing to this project. Please read the [Contr
 
 ## License
 
-Any contributions made under this project will be governed by the [MIT License](LICENSE).
+Any contributions made under this project will be governed by the [MIT License](LICENSE)
