@@ -1,9 +1,12 @@
 version: 2
 updates:
-  - package-ecosystem: 'npm'
+  - package-ecosystem: npm
     directory: '/'
     schedule:
-      interval: 'daily'
+      interval: daily
+      timezone: Asia/Tokyo
     allow:
-      - dependency-type: "all"
+      - dependency-type: all
     rebase-strategy: auto
+    assignees:
+      - poad
