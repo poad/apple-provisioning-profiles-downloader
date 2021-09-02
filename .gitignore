@@ -86,6 +86,7 @@ dist
 !node_modules/buffer-equal-constant-time
 !node_modules/date-format
 !node_modules/ecdsa-sig-formatter
+!node_modules/esm
 !node_modules/flatted
 !node_modules/fs-extra
 !node_modules/graceful-fs

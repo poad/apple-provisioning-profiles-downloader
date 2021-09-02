@@ -10,7 +10,7 @@
     "format-check": "prettier --check **/*.ts",
     "lint": "eslint src/**/*.ts",
     "package": "ncc build --source-map --license licenses.txt",
-    "test": "jest",
+    "test": "NODE_OPTIONS=--experimental-vm-modules npx jest",
     "dev": "ts-node src/main.ts",
     "all": "yarn build && yarn format && yarn lint && yarn package && yarn test"
   },
@@ -29,6 +29,7 @@
     "@actions/core": "^1.5.0",
     "@actions/io": "^1.1.1",
     "appstore-connect-jwt-generator-core": "^1.0.0",
+    "esm": "^3.2.25",
     "node-fetch": "^3.0.0"
   },
   "devDependencies": {
