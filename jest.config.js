@@ -4,6 +4,7 @@ module.exports = {
       tsconfig: 'tsconfig-test.json'
     }
   },
+  extensionsToTreatAsEsm: ['.ts'],
   clearMocks: true,
   moduleFileExtensions: ['js', 'ts'],
   testMatch: ['**/*.test.ts'],
