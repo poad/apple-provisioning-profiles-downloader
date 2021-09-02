@@ -30,7 +30,7 @@ module appStoreConnect {
       console.error(text)
       throw new Error(text)
     }
-    return response.json()
+    return response.json() as Promise<BundleIdsResponse>
   }
 
   export const Client = (param: {
