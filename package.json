@@ -10,7 +10,7 @@
     "format-check": "prettier --check **/*.ts",
     "lint": "eslint src/**/*.ts",
     "package": "ncc build --source-map --license licenses.txt",
-    "test": "NODE_OPTIONS=--experimental-vm-modules npx jest",
+    "test": "jest --no-cache",
     "dev": "ts-node src/main.ts",
     "all": "yarn build && yarn format && yarn lint && yarn package && yarn test"
   },
@@ -29,16 +29,16 @@
     "@actions/core": "^1.5.0",
     "@actions/io": "^1.1.1",
     "appstore-connect-jwt-generator-core": "^1.0.0",
-    "esm": "^3.2.25",
-    "node-fetch": "^3.0.0"
+    "cross-fetch": "^3.1.4",
+    "esm": "^3.2.25"
   },
   "devDependencies": {
     "@types/jest": "^27.0.1",
     "@types/jsonwebtoken": "^8.5.5",
     "@types/node": "^16.7.10",
-    "@types/node-fetch": "^2.5.12",
     "@typescript-eslint/parser": "^4.30.0",
     "@vercel/ncc": "^0.30.0",
+    "babel-jest": "^27.1.0",
     "eslint": "^7.32.0",
     "eslint-plugin-github": "^4.2.0",
     "eslint-plugin-jest": "^24.4.0",

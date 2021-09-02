@@ -1,6 +1,6 @@
 import {BundleIdsResponse} from './types'
 import token from 'appstore-connect-jwt-generator-core'
-import fetch from 'node-fetch'
+import fetch from 'cross-fetch'
 
 module appStoreConnect {
   let jwt: string
