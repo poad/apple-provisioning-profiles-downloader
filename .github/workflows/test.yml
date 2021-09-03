@@ -20,7 +20,11 @@ jobs:
           cache: yarn
 
       - run: yarn install
+      - name: build
+        if: github.actor == 'dependabot[bot]'
+        run: yarn build && yarn format && yarn lint && yarn package
       - name: unit test
+        if: github.actor != 'dependabot[bot]'
         env:
           BUNDLE_ID: 'com.github.poad.*'
           PROFILE_TYPE: 'IOS_APP_ADHOC'
@@ -31,6 +35,7 @@ jobs:
 
   test:
     runs-on: macos-11
+    if: github.actor != 'dependabot[bot]'
     steps:
       - uses: actions/checkout@v2
 
