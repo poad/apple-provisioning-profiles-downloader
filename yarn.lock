@@ -2656,16 +2656,16 @@ jest-util@^27.0.0, jest-util@^27.1.1:
     picomatch "^2.2.3"
 
 jest-validate@^27.1.1:
-  version "27.1.1"
-  resolved "https://registry.yarnpkg.com/jest-validate/-/jest-validate-27.1.1.tgz#0783733af02c988d503995fc0a07bbdc58c7dd50"
-  integrity sha512-N5Er5FKav/8m2dJwn7BGnZwnoD1BSc8jx5T+diG2OvyeugvZDhPeAt5DrNaGkkaKCrSUvuE7A5E4uHyT7Vj0Mw==
+  version "27.2.0"
+  resolved "https://registry.yarnpkg.com/jest-validate/-/jest-validate-27.2.0.tgz#b7535f12d95dd3b4382831f4047384ca098642ab"
+  integrity sha512-uIEZGkFKk3+4liA81Xu0maG5aGDyPLdp+4ed244c+Ql0k3aLWQYcMbaMLXOIFcb83LPHzYzqQ8hwNnIxTqfAGQ==
   dependencies:
     "@jest/types" "^27.1.1"
     camelcase "^6.2.0"
     chalk "^4.0.0"
     jest-get-type "^27.0.6"
     leven "^3.1.0"
-    pretty-format "^27.1.1"
+    pretty-format "^27.2.0"
 
 jest-watcher@^27.1.1:
   version "27.1.1"
@@ -3334,10 +3334,10 @@ prettier@2.4.0, prettier@^2.2.1:
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.4.0.tgz#85bdfe0f70c3e777cf13a4ffff39713ca6f64cba"
   integrity sha512-DsEPLY1dE5HF3BxCRBmD4uYZ+5DCbvatnolqTqcxEgKVZnL2kUfyu7b8pPQ5+hTBkdhU9SLUmK0/pHb07RE4WQ==
 
-pretty-format@^27.0.0, pretty-format@^27.1.1:
-  version "27.1.1"
-  resolved "https://registry.yarnpkg.com/pretty-format/-/pretty-format-27.1.1.tgz#cbaf9ec6cd7cfc3141478b6f6293c0ccdbe968e0"
-  integrity sha512-zdBi/xlstKJL42UH7goQti5Hip/B415w1Mfj+WWWYMBylAYtKESnXGUtVVcMVid9ReVjypCotUV6CEevYPHv2g==
+pretty-format@^27.0.0, pretty-format@^27.1.1, pretty-format@^27.2.0:
+  version "27.2.0"
+  resolved "https://registry.yarnpkg.com/pretty-format/-/pretty-format-27.2.0.tgz#ee37a94ce2a79765791a8649ae374d468c18ef19"
+  integrity sha512-KyJdmgBkMscLqo8A7K77omgLx5PWPiXJswtTtFV7XgVZv2+qPk6UivpXXO+5k6ZEbWIbLoKdx1pZ6ldINzbwTA==
   dependencies:
     "@jest/types" "^27.1.1"
     ansi-regex "^5.0.0"
