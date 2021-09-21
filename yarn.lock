@@ -1759,7 +1759,7 @@ exit@^0.1.2:
   resolved "https://registry.yarnpkg.com/exit/-/exit-0.1.2.tgz#0632638f8d877cc82107d30a0fff1a17cba1cd0c"
   integrity sha1-BjJjj42HfMghB9MKD/8aF8uhzQw=
 
-expect@^27.2.0, expect@^27.2.1:
+expect@^27.2.1:
   version "27.2.1"
   resolved "https://registry.yarnpkg.com/expect/-/expect-27.2.1.tgz#5f882b308716618613f0106a488b46c303908157"
   integrity sha512-ekOA2mBtT2phxcoPVHCXIzbJxCvRXhx2fr7m28IgGdZxUOh8UvxvoRz1FcPlfgZMpE92biHB6woIcAKXqR28hA==
@@ -2445,9 +2445,9 @@ jest-haste-map@^27.2.0:
     fsevents "^2.3.2"
 
 jest-jasmine2@^27.2.0:
-  version "27.2.0"
-  resolved "https://registry.yarnpkg.com/jest-jasmine2/-/jest-jasmine2-27.2.0.tgz#1ece0ee37c348b59ed3dfcfe509fc24e3377b12d"
-  integrity sha512-NcPzZBk6IkDW3Z2V8orGueheGJJYfT5P0zI/vTO/Jp+R9KluUdgFrgwfvZ0A34Kw6HKgiWFILZmh3oQ/eS+UxA==
+  version "27.2.1"
+  resolved "https://registry.yarnpkg.com/jest-jasmine2/-/jest-jasmine2-27.2.1.tgz#30ee71f38670a621ecf3b6dcb89875933f780de6"
+  integrity sha512-3vytj3+S49+XYsxGJyjlchDo4xblYzjDY4XK7pV2IAdspbMFOpmeNMOeDonYuvlbUtcV8yrFLA6XtliXapDmMA==
   dependencies:
     "@babel/traverse" "^7.1.0"
     "@jest/environment" "^27.2.0"
@@ -2457,13 +2457,13 @@ jest-jasmine2@^27.2.0:
     "@types/node" "*"
     chalk "^4.0.0"
     co "^4.6.0"
-    expect "^27.2.0"
+    expect "^27.2.1"
     is-generator-fn "^2.0.0"
     jest-each "^27.2.0"
     jest-matcher-utils "^27.2.0"
     jest-message-util "^27.2.0"
-    jest-runtime "^27.2.0"
-    jest-snapshot "^27.2.0"
+    jest-runtime "^27.2.1"
+    jest-snapshot "^27.2.1"
     jest-util "^27.2.0"
     pretty-format "^27.2.0"
     throat "^6.0.1"
