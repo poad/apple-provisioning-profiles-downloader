@@ -33,7 +33,7 @@
     "esm": "^3.2.25"
   },
   "devDependencies": {
-    "@types/jest": "^27.0.1",
+    "@types/jest": "^27.0.2",
     "@types/jsonwebtoken": "^8.5.5",
     "@types/node": "^16.9.4",
     "@typescript-eslint/parser": "^4.31.2",
