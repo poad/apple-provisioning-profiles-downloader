@@ -2560,23 +2560,7 @@ jest-resolve-dependencies@^27.2.2:
     jest-regex-util "^27.0.6"
     jest-snapshot "^27.2.2"
 
-jest-resolve@^27.2.2:
-  version "27.2.2"
-  resolved "https://registry.yarnpkg.com/jest-resolve/-/jest-resolve-27.2.2.tgz#1bad93dbc6c20edb874e6720e82e4e48900b120b"
-  integrity sha512-tfbHcBs/hJTb3fPQ/3hLWR+TsLNTzzK98TU+zIAsrL9nNzWfWROwopUOmiSUqmHMZW5t9au/433kSF2/Af+tTw==
-  dependencies:
-    "@jest/types" "^27.1.1"
-    chalk "^4.0.0"
-    escalade "^3.1.1"
-    graceful-fs "^4.2.4"
-    jest-haste-map "^27.2.2"
-    jest-pnp-resolver "^1.2.2"
-    jest-util "^27.2.0"
-    jest-validate "^27.2.2"
-    resolve "^1.20.0"
-    slash "^3.0.0"
-
-jest-resolve@^27.2.3:
+jest-resolve@^27.2.2, jest-resolve@^27.2.3:
   version "27.2.3"
   resolved "https://registry.yarnpkg.com/jest-resolve/-/jest-resolve-27.2.3.tgz#868911cf705c537f433befcfc65e6ddc70c9d7f9"
   integrity sha512-+tbm53gKpwuRsqCV+zhhjq/6NxMs/I9zECEMzu0LtmbYD5Gusj+rU497f6lkl5LG/GndvfTjJlysYrnSCcZUJA==
@@ -2703,19 +2687,7 @@ jest-util@^27.0.0, jest-util@^27.2.0, jest-util@^27.2.3:
     is-ci "^3.0.0"
     picomatch "^2.2.3"
 
-jest-validate@^27.2.2:
-  version "27.2.2"
-  resolved "https://registry.yarnpkg.com/jest-validate/-/jest-validate-27.2.2.tgz#e672118f1d9aa57b25b4c7998edc101dabd7020b"
-  integrity sha512-01mwTAs2kgDuX98Ua3Xhdhp5lXsLU4eyg6k56adTtrXnU/GbLd9uAsh5nc4MWVtUXMeNmHUyEiD4ibLqE8MuNw==
-  dependencies:
-    "@jest/types" "^27.1.1"
-    camelcase "^6.2.0"
-    chalk "^4.0.0"
-    jest-get-type "^27.0.6"
-    leven "^3.1.0"
-    pretty-format "^27.2.2"
-
-jest-validate@^27.2.3:
+jest-validate@^27.2.2, jest-validate@^27.2.3:
   version "27.2.3"
   resolved "https://registry.yarnpkg.com/jest-validate/-/jest-validate-27.2.3.tgz#4fcc49e581f13fbe260a77e711a80f0256138a7a"
   integrity sha512-HUfTZ/W87zoxOuEGC01ujXzoLzRpJqvhMdIrRilpXGmso2vJWw3bHpbWKhivYMr0X/BjitLrHywj/+niNfIcEA==
