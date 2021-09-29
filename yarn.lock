@@ -1008,6 +1008,20 @@ asynckit@^0.4.0:
   resolved "https://registry.yarnpkg.com/asynckit/-/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
   integrity sha1-x57Zf380y48robyXkLzDZkdLS3k=
 
+babel-jest@^27.2.2, babel-jest@^27.2.3:
+  version "27.2.3"
+  resolved "https://registry.yarnpkg.com/babel-jest/-/babel-jest-27.2.3.tgz#f48599a507cd33c10f58058149eb3079198d0ed7"
+  integrity sha512-lXslrpae1L9cXnB5F8vvD/Yj70g47sG7CGSxT+qqveK/To72X3nuCtDux0s3HN7X351IbwYoYyfDxQ7CqVbkNw==
+  dependencies:
+    "@jest/transform" "^27.2.3"
+    "@jest/types" "^27.2.3"
+    "@types/babel__core" "^7.1.14"
+    babel-plugin-istanbul "^6.0.0"
+    babel-preset-jest "^27.2.0"
+    chalk "^4.0.0"
+    graceful-fs "^4.2.4"
+    slash "^3.0.0"
+
 babel-jest@^27.2.3:
   version "27.2.3"
   resolved "https://registry.yarnpkg.com/babel-jest/-/babel-jest-27.2.3.tgz#f48599a507cd33c10f58058149eb3079198d0ed7"
