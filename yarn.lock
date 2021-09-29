@@ -397,7 +397,7 @@
     jest-util "^27.2.3"
     slash "^3.0.0"
 
-"@jest/core@^27.2.2", "@jest/core@^27.2.3":
+"@jest/core@^27.2.3":
   version "27.2.3"
   resolved "https://registry.yarnpkg.com/@jest/core/-/core-27.2.3.tgz#b21a3ffb69bef017c4562d27689bb798c0194501"
   integrity sha512-I+VX+X8pkw2I057swT3ufNp6V5EBeFO1dl+gvIexdV0zg1kZ+cz9CrPbWL75dYrJIInf5uWPwDwOoJCALrTxWw==
@@ -1008,7 +1008,7 @@ asynckit@^0.4.0:
   resolved "https://registry.yarnpkg.com/asynckit/-/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
   integrity sha1-x57Zf380y48robyXkLzDZkdLS3k=
 
-babel-jest@^27.2.2, babel-jest@^27.2.3:
+babel-jest@^27.2.3:
   version "27.2.3"
   resolved "https://registry.yarnpkg.com/babel-jest/-/babel-jest-27.2.3.tgz#f48599a507cd33c10f58058149eb3079198d0ed7"
   integrity sha512-lXslrpae1L9cXnB5F8vvD/Yj70g47sG7CGSxT+qqveK/To72X3nuCtDux0s3HN7X351IbwYoYyfDxQ7CqVbkNw==
@@ -2334,7 +2334,7 @@ jest-circus@^27.2.3:
     stack-utils "^2.0.3"
     throat "^6.0.1"
 
-jest-cli@^27.2.2:
+jest-cli@^27.2.3:
   version "27.2.3"
   resolved "https://registry.yarnpkg.com/jest-cli/-/jest-cli-27.2.3.tgz#68add5b1626bd5502df6c7a4a4d574ebf797221a"
   integrity sha512-QHXxxqE1zxMlti6wIHSbkl4Brg5Dnc0xzAVqRlVa6y2Ygv2X4ejhfMjl4VB5gWeHNsVA9C+KOm8TawpjZX8d3g==
@@ -2702,14 +2702,14 @@ jest-worker@^27.2.3:
     merge-stream "^2.0.0"
     supports-color "^8.0.0"
 
-jest@^27.2.2:
-  version "27.2.2"
-  resolved "https://registry.yarnpkg.com/jest/-/jest-27.2.2.tgz#445a4c16aa4c4ae6e512d62fb6f8b2624cbd6c26"
-  integrity sha512-XAB/9akDTe3/V0wPNKWfP9Y/NT1QPiCqyRBYGbC66EA9EvgAzdaFEqhFGLaDJ5UP2yIyXUMtju9a9IMrlYbZTQ==
+jest@^27.2.3:
+  version "27.2.3"
+  resolved "https://registry.yarnpkg.com/jest/-/jest-27.2.3.tgz#9c2af9ce874a3eb202f83d92fbc1cc61ccc73248"
+  integrity sha512-r4ggA29J5xUg93DpvbsX+AXlFMWE3hZ5Y6BfgTl8PJvWelVezNPkmrsixuGoDBTHTCwScRSH0O4wsoeUgLie2w==
   dependencies:
-    "@jest/core" "^27.2.2"
+    "@jest/core" "^27.2.3"
     import-local "^3.0.2"
-    jest-cli "^27.2.2"
+    jest-cli "^27.2.3"
 
 js-tokens@^4.0.0:
   version "4.0.0"
