@@ -1770,7 +1770,7 @@ exit@^0.1.2:
   resolved "https://registry.yarnpkg.com/exit/-/exit-0.1.2.tgz#0632638f8d877cc82107d30a0fff1a17cba1cd0c"
   integrity sha1-BjJjj42HfMghB9MKD/8aF8uhzQw=
 
-expect@^27.2.3, expect@^27.2.4:
+expect@^27.2.4:
   version "27.2.4"
   resolved "https://registry.yarnpkg.com/expect/-/expect-27.2.4.tgz#4debf546050bcdad8914a8c95fec7662e02bf67c"
   integrity sha512-gOtuonQ8TCnbNNCSw2fhVzRf8EFYDII4nB5NmG4IEV0rbUnW1I5zXvoTntU4iicB/Uh0oZr20NGlOLdJiwsOZA==
@@ -2404,7 +2404,7 @@ jest-docblock@^27.0.6:
   dependencies:
     detect-newline "^3.0.0"
 
-jest-each@^27.2.3, jest-each@^27.2.4:
+jest-each@^27.2.4:
   version "27.2.4"
   resolved "https://registry.yarnpkg.com/jest-each/-/jest-each-27.2.4.tgz#b4f280aafd63129ba82e345f0e74c5a10200aeef"
   integrity sha512-w9XVc+0EDBUTJS4xBNJ7N2JCcWItFd006lFjz77OarAQcQ10eFDBMrfDv2GBJMKlXe9aq0HrIIF51AXcZrRJyg==
@@ -2466,27 +2466,27 @@ jest-haste-map@^27.2.3, jest-haste-map@^27.2.4:
     fsevents "^2.3.2"
 
 jest-jasmine2@^27.2.3:
-  version "27.2.3"
-  resolved "https://registry.yarnpkg.com/jest-jasmine2/-/jest-jasmine2-27.2.3.tgz#19fe549b7e86128cd7d0d1668ebf4377dd3981f9"
-  integrity sha512-pjgANGYj1l6qxBkSPEYuxGvqVVf20uJ26XpNnYV/URC7ayt+UdRavUhEwzDboiewq/lCgNFCDBEqd6eeQVEs8w==
+  version "27.2.4"
+  resolved "https://registry.yarnpkg.com/jest-jasmine2/-/jest-jasmine2-27.2.4.tgz#4a1608133dbdb4d68b5929bfd785503ed9c9ba51"
+  integrity sha512-fcffjO/xLWLVnW2ct3No4EksxM5RyPwHDYu9QU+90cC+/eSMLkFAxS55vkqsxexOO5zSsZ3foVpMQcg/amSeIQ==
   dependencies:
     "@babel/traverse" "^7.1.0"
-    "@jest/environment" "^27.2.3"
+    "@jest/environment" "^27.2.4"
     "@jest/source-map" "^27.0.6"
-    "@jest/test-result" "^27.2.3"
-    "@jest/types" "^27.2.3"
+    "@jest/test-result" "^27.2.4"
+    "@jest/types" "^27.2.4"
     "@types/node" "*"
     chalk "^4.0.0"
     co "^4.6.0"
-    expect "^27.2.3"
+    expect "^27.2.4"
     is-generator-fn "^2.0.0"
-    jest-each "^27.2.3"
-    jest-matcher-utils "^27.2.3"
-    jest-message-util "^27.2.3"
-    jest-runtime "^27.2.3"
-    jest-snapshot "^27.2.3"
-    jest-util "^27.2.3"
-    pretty-format "^27.2.3"
+    jest-each "^27.2.4"
+    jest-matcher-utils "^27.2.4"
+    jest-message-util "^27.2.4"
+    jest-runtime "^27.2.4"
+    jest-snapshot "^27.2.4"
+    jest-util "^27.2.4"
+    pretty-format "^27.2.4"
     throat "^6.0.1"
 
 jest-leak-detector@^27.2.3:
@@ -2497,7 +2497,7 @@ jest-leak-detector@^27.2.3:
     jest-get-type "^27.0.6"
     pretty-format "^27.2.3"
 
-jest-matcher-utils@^27.2.3, jest-matcher-utils@^27.2.4:
+jest-matcher-utils@^27.2.4:
   version "27.2.4"
   resolved "https://registry.yarnpkg.com/jest-matcher-utils/-/jest-matcher-utils-27.2.4.tgz#008fff018151415ad1b6cfc083fd70fe1e012525"
   integrity sha512-nQeLfFAIPPkyhkDfifAPfP/U5wm1x0fLtAzqXZSSKckXDNuk2aaOfQiDYv1Mgf5GY6yOsxfUnvNm3dDjXM+BXw==
