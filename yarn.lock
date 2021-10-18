@@ -965,10 +965,10 @@ anymatch@^3.0.3:
     normalize-path "^3.0.0"
     picomatch "^2.0.4"
 
-appstore-connect-jwt-generator-core@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/appstore-connect-jwt-generator-core/-/appstore-connect-jwt-generator-core-1.0.0.tgz#72485447bc629dec6ebc00b0d115215934e31e0a"
-  integrity sha512-kgOPm/esZA13jX3nI2bfhbQIaEhQDXX7nNI+GO7PCoe0ykVC59OTs1bkbLmV4l3+QWXSQ3taVuWvJ60J/gl5yw==
+appstore-connect-jwt-generator-core@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/appstore-connect-jwt-generator-core/-/appstore-connect-jwt-generator-core-1.0.1.tgz#6610a235a41ff6fcb3c106cf4cf30661e6749e45"
+  integrity sha512-IZmclrudNjgn+Eatc1u+Tk1rhb13dKtS1wUgNe2Kk2KT/svdlPaLrxtLD7iu5Cb53lmH2nJki3ySIkVKR00rcQ==
   dependencies:
     "@types/jsonwebtoken" "^8.5.5"
     jsonwebtoken "^8.5.1"
