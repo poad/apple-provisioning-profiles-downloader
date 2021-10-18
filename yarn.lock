@@ -2683,19 +2683,7 @@ jest-util@^27.0.0, jest-util@^27.2.5, jest-util@^27.3.0:
     is-ci "^3.0.0"
     picomatch "^2.2.3"
 
-jest-validate@^27.2.5:
-  version "27.2.5"
-  resolved "https://registry.yarnpkg.com/jest-validate/-/jest-validate-27.2.5.tgz#2d59bf1627d180f395ba58f24599b0ee0efcfbdf"
-  integrity sha512-XgYtjS89nhVe+UfkbLgcm+GgXKWgL80t9nTcNeejyO3t0Sj/yHE8BtIJqjZu9NXQksYbGImoQRXmQ1gP+Guffw==
-  dependencies:
-    "@jest/types" "^27.2.5"
-    camelcase "^6.2.0"
-    chalk "^4.0.0"
-    jest-get-type "^27.0.6"
-    leven "^3.1.0"
-    pretty-format "^27.2.5"
-
-jest-validate@^27.3.0:
+jest-validate@^27.2.5, jest-validate@^27.3.0:
   version "27.3.0"
   resolved "https://registry.yarnpkg.com/jest-validate/-/jest-validate-27.3.0.tgz#1a92dd52d0a493037f6e1776c49457c031e0adc8"
   integrity sha512-5oqWnb9MrkicE+ywR+BxoZr0L7H3WBDAt6LZggnyFHieAk8nnIQAKRpSodNPhiNJTwaMSbNjCe7SxAzKwTsBoA==
