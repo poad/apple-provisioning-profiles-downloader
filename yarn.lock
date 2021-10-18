@@ -2265,9 +2265,9 @@ isexe@^2.0.0:
   integrity sha1-6PvzdNxVb/iUehDcsFctYz8s+hA=
 
 istanbul-lib-coverage@^3.0.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/istanbul-lib-coverage/-/istanbul-lib-coverage-3.1.0.tgz#554d3f8adb1101c6aff427d287ed077642a5dcb2"
-  integrity sha512-OFSPP1Csv3GxruycNA1iRJPnc5pon+N4Q89EUz8KYOFbdsqCoHRh0J8jwRdna5thveVcMTdgY27kUl/lZuAWdw==
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/istanbul-lib-coverage/-/istanbul-lib-coverage-3.2.0.tgz#189e7909d0a39fa5a3dfad5b03f71947770191d3"
+  integrity sha512-eOeJ5BHCmHYvQK7xt9GkdHuzuCGS1Y6g9Gvnx3Ym33fz/HpLRYxiS0wHNr+m/MBC8B647Xt608vCDEvhl9c6Mw==
 
 istanbul-lib-instrument@^4.0.3:
   version "4.0.3"
@@ -2549,13 +2549,13 @@ jest-regex-util@^27.0.6:
   integrity sha512-SUhPzBsGa1IKm8hx2F4NfTGGp+r7BXJ4CulsZ1k2kI+mGLG+lxGrs76veN2LF/aUdGosJBzKgXmNCw+BzFqBDQ==
 
 jest-resolve-dependencies@^27.2.5:
-  version "27.2.5"
-  resolved "https://registry.yarnpkg.com/jest-resolve-dependencies/-/jest-resolve-dependencies-27.2.5.tgz#fcd8eca005b3d11ba32da443045c028164b83be1"
-  integrity sha512-BSjefped31bcvvCh++/pN9ueqqN1n0+p8/58yScuWfklLm2tbPbS9d251vJhAy0ZI2pL/0IaGhOTJrs9Y4FJlg==
+  version "27.3.0"
+  resolved "https://registry.yarnpkg.com/jest-resolve-dependencies/-/jest-resolve-dependencies-27.3.0.tgz#1467ed51d87635aec7133b2e29a283500f4609d1"
+  integrity sha512-YVmlWHdSUCOLrJl8lOIjda6+DtbgOCfExfoSx9gvHFYaXPq0UP2EELiX514H0rURTbSaLsDTodLNyqqEd/IqeA==
   dependencies:
     "@jest/types" "^27.2.5"
     jest-regex-util "^27.0.6"
-    jest-snapshot "^27.2.5"
+    jest-snapshot "^27.3.0"
 
 jest-resolve@^27.2.5, jest-resolve@^27.3.0:
   version "27.3.0"
