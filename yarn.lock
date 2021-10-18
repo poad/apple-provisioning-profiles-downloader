@@ -2412,16 +2412,16 @@ jest-docblock@^27.0.6:
   dependencies:
     detect-newline "^3.0.0"
 
-jest-each@^27.2.5:
-  version "27.2.5"
-  resolved "https://registry.yarnpkg.com/jest-each/-/jest-each-27.2.5.tgz#378118d516db730b92096a9607b8711165946353"
-  integrity sha512-HUPWIbJT0bXarRwKu/m7lYzqxR4GM5EhKOsu0z3t0SKtbFN6skQhpAUADM4qFShBXb9zoOuag5lcrR1x/WM+Ag==
+jest-each@^27.2.5, jest-each@^27.3.0:
+  version "27.3.0"
+  resolved "https://registry.yarnpkg.com/jest-each/-/jest-each-27.3.0.tgz#7976cf15bebeef28aa5108a589f4c335b6f0eec9"
+  integrity sha512-i7qQt+puYusxOoiNyq/M6EyNcfEbvKvqOp89FbiHfm6/POTxgzpp5wAmoS9+BAssoX20t7Zt1A1M7yT3FLVvdg==
   dependencies:
     "@jest/types" "^27.2.5"
     chalk "^4.0.0"
     jest-get-type "^27.0.6"
-    jest-util "^27.2.5"
-    pretty-format "^27.2.5"
+    jest-util "^27.3.0"
+    pretty-format "^27.3.0"
 
 jest-environment-jsdom@^27.2.5, jest-environment-jsdom@^27.3.0:
   version "27.3.0"
@@ -2474,27 +2474,27 @@ jest-haste-map@^27.2.5, jest-haste-map@^27.3.0:
     fsevents "^2.3.2"
 
 jest-jasmine2@^27.2.5:
-  version "27.2.5"
-  resolved "https://registry.yarnpkg.com/jest-jasmine2/-/jest-jasmine2-27.2.5.tgz#baaf96c69913c52bce0100000cf0721027c0fd66"
-  integrity sha512-hdxY9Cm/CjLqu2tXeAoQHPgA4vcqlweVXYOg1+S9FeFdznB9Rti+eEBKDDkmOy9iqr4Xfbq95OkC4NFbXXPCAQ==
+  version "27.3.0"
+  resolved "https://registry.yarnpkg.com/jest-jasmine2/-/jest-jasmine2-27.3.0.tgz#d5ac6bec10f6696da99d990bf3df2377578fd331"
+  integrity sha512-c12xS913sE56pBYZYIuukttDyMJTgK+T/aYKuHse/jyBHk2r78IFxrEl0BL8iiezLZw6g6bKtyww/j9XWOVxqg==
   dependencies:
     "@babel/traverse" "^7.1.0"
-    "@jest/environment" "^27.2.5"
+    "@jest/environment" "^27.3.0"
     "@jest/source-map" "^27.0.6"
-    "@jest/test-result" "^27.2.5"
+    "@jest/test-result" "^27.3.0"
     "@jest/types" "^27.2.5"
     "@types/node" "*"
     chalk "^4.0.0"
     co "^4.6.0"
-    expect "^27.2.5"
+    expect "^27.3.0"
     is-generator-fn "^2.0.0"
-    jest-each "^27.2.5"
-    jest-matcher-utils "^27.2.5"
-    jest-message-util "^27.2.5"
-    jest-runtime "^27.2.5"
-    jest-snapshot "^27.2.5"
-    jest-util "^27.2.5"
-    pretty-format "^27.2.5"
+    jest-each "^27.3.0"
+    jest-matcher-utils "^27.3.0"
+    jest-message-util "^27.3.0"
+    jest-runtime "^27.3.0"
+    jest-snapshot "^27.3.0"
+    jest-util "^27.3.0"
+    pretty-format "^27.3.0"
     throat "^6.0.1"
 
 jest-leak-detector@^27.3.0:
