@@ -2,7 +2,7 @@
 
 [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](LICENSE)
 [![PRs welcome!](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
-[![version](https://img.shields.io/github/tag/v/poad/apple-provisioning-profiles-downloader?sort=semver)](VERSION)
+[![version](https://img.shields.io/github/v/release/poad/apple-provisioning-profiles-downloader?display_name=tag&include_prereleases&sort=semver)](VERSION)
 
 I am referring to [Apple-Actions/apple-provisioning-profiles-downloader](https://github.com/Apple-Actions/apple-provisioning-profiles-downloader).
 
