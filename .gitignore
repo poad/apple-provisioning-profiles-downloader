@@ -104,7 +104,9 @@ dist
 !node_modules/log4js
 !node_modules/ms
 !node_modules/node-fetch
+!node_modules/regenerator-runtime
 !node_modules/rfdc
 !node_modules/safe-buffer
 !node_modules/streamroller
+!node_modules/tunnel
 !node_modules/universalify
