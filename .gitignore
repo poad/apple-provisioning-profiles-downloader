@@ -107,4 +107,5 @@ dist
 !node_modules/rfdc
 !node_modules/safe-buffer
 !node_modules/streamroller
+!node_modules/tunnel
 !node_modules/universalify
