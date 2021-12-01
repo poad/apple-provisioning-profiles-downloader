@@ -547,6 +547,17 @@
     "@types/yargs" "^16.0.0"
     chalk "^4.0.0"
 
+"@jest/types@^27.4.2":
+  version "27.4.2"
+  resolved "https://registry.yarnpkg.com/@jest/types/-/types-27.4.2.tgz#96536ebd34da6392c2b7c7737d693885b5dd44a5"
+  integrity sha512-j35yw0PMTPpZsUoOBiuHzr1zTYoad1cVIE0ajEjcrJONxxrko/IRGKkXx3os0Nsi4Hu3+5VmDbVfq5WhG/pWAg==
+  dependencies:
+    "@types/istanbul-lib-coverage" "^2.0.0"
+    "@types/istanbul-reports" "^3.0.0"
+    "@types/node" "*"
+    "@types/yargs" "^16.0.0"
+    chalk "^4.0.0"
+
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
   resolved "https://registry.yarnpkg.com/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz#7619c2eb21b25483f6d167548b4cfd5a7488c3d5"
@@ -2489,12 +2500,12 @@ jest-jasmine2@^27.4.0:
     throat "^6.0.1"
 
 jest-leak-detector@^27.4.0:
-  version "27.4.0"
-  resolved "https://registry.yarnpkg.com/jest-leak-detector/-/jest-leak-detector-27.4.0.tgz#f1379e537a8e6c87e7775f6e4d2b7052f55385f2"
-  integrity sha512-d7QeqzIOVQeMI6VROLPNeYagcxPCvqYD6A34Ol9D+vPzs72omGXsGbuuJrChD51zuA4ESXcLYZ81L9JHr1VYGw==
+  version "27.4.2"
+  resolved "https://registry.yarnpkg.com/jest-leak-detector/-/jest-leak-detector-27.4.2.tgz#7fc3120893a7a911c553f3f2bdff9faa4454abbb"
+  integrity sha512-ml0KvFYZllzPBJWDei3mDzUhyp/M4ubKebX++fPaudpe8OsxUE+m+P6ciVLboQsrzOCWDjE20/eXew9QMx/VGw==
   dependencies:
     jest-get-type "^27.4.0"
-    pretty-format "^27.4.0"
+    pretty-format "^27.4.2"
 
 jest-matcher-utils@^27.4.0:
   version "27.4.0"
@@ -3291,12 +3302,12 @@ prettier@2.5.0, prettier@^2.2.1:
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.5.0.tgz#a6370e2d4594e093270419d9cc47f7670488f893"
   integrity sha512-FM/zAKgWTxj40rH03VxzIPdXmj39SwSjwG0heUcNFwI+EMZJnY93yAiKXM3dObIKAM5TA88werc8T/EwhB45eg==
 
-pretty-format@^27.0.0, pretty-format@^27.4.0:
-  version "27.4.0"
-  resolved "https://registry.yarnpkg.com/pretty-format/-/pretty-format-27.4.0.tgz#440a7b86612a18b0865831a6d8585d989a5420e9"
-  integrity sha512-n0QR6hMREfp6nLzfVksXMAfIxk1ffOOfbb/FzKHFmRtn9iJKaZXB8WMzLr8a72IASShEAhqK06nlwp1gVWgqKg==
+pretty-format@^27.0.0, pretty-format@^27.4.0, pretty-format@^27.4.2:
+  version "27.4.2"
+  resolved "https://registry.yarnpkg.com/pretty-format/-/pretty-format-27.4.2.tgz#e4ce92ad66c3888423d332b40477c87d1dac1fb8"
+  integrity sha512-p0wNtJ9oLuvgOQDEIZ9zQjZffK7KtyR6Si0jnXULIDwrlNF8Cuir3AZP0hHv0jmKuNN/edOnbMjnzd4uTcmWiw==
   dependencies:
-    "@jest/types" "^27.4.0"
+    "@jest/types" "^27.4.2"
     ansi-regex "^5.0.1"
     ansi-styles "^5.0.0"
     react-is "^17.0.1"
