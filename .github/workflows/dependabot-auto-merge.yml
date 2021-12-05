@@ -3,6 +3,19 @@ name: dependabot-auto-merge
 on:
   pull_request_target:
 
+permissions:
+  actions: read
+  checks: write
+  contents: none
+  deployments: none
+  id-token: write
+  issues: none
+  packages: none
+  pull-requests: write
+  repository-projects: none
+  security-events: write
+  statuses: write
+
 jobs:
   auto-merge:
     runs-on: ubuntu-latest

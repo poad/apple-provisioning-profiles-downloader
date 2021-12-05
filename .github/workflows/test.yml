@@ -7,6 +7,16 @@ on: # rebuild any PRs and main branch changes
 
   workflow_dispatch:
 
+permissions:
+  actions: read
+  checks: write
+  contents: none
+  deployments: none
+  issues: none
+  packages: none
+  repository-projects: none
+  statuses: write
+
 jobs:
   build:
     runs-on: macos-11
