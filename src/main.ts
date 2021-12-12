@@ -1,9 +1,9 @@
 import * as core from '@actions/core'
 import * as fs from 'fs'
 import path from 'path'
-import {BundleIdsResponse, ErrorResponse, Profile} from './types'
+import {BundleIdsResponse, Profile} from './types'
 import * as io from '@actions/io'
-import appStoreConnect from './client'
+import appStoreConnect from './client.js'
 
 const run = async (): Promise<void> => {
   try {

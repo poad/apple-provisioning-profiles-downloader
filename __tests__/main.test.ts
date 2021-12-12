@@ -18,7 +18,7 @@ test('test runs', () => {
   process.env['ACTIONS_STEP_DEBUG'] = 'true'
 
   const np = process.execPath
-  const ip = path.join(__dirname, '..', 'lib', 'main.js')
+  const ip = path.join(path.resolve(), '..', 'lib', 'main.js')
   const options: cp.ExecFileSyncOptions = {
     env: process.env
   }
