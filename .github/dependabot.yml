@@ -4,6 +4,7 @@ updates:
     directory: /
     schedule:
       interval: daily
+      timezone: Asia/Tokyo
     allow:
       - dependency-type: all
     rebase-strategy: auto

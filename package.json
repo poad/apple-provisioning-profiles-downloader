@@ -3,16 +3,26 @@
   "version": "1.0.0",
   "private": true,
   "description": "TypeScript template action",
-  "main": "lib/main.js",
+  "main": "./dist/main.js",
+  "exports": {
+    ".": {
+      "node": "./dist/main.js",
+      "default": "./dist/main.js",
+      "import": "./dist/main.js",
+      "require": "./dist/main.js"
+    }
+  },
+  "type": "module",
   "scripts": {
-    "build": "tsc",
+    "build": "yarn clean && tsc",
+    "clean": "rm -rf dist",
     "format": "prettier --write **/*.ts",
     "format-check": "prettier --check **/*.ts",
     "lint": "eslint src/**/*.ts",
     "package": "ncc build --source-map --license licenses.txt",
-    "test": "jest --no-cache",
+    "test": "NODE_OPTIONS=--experimental-vm-modules npx jest --no-cache",
     "dev": "ts-node src/main.ts",
-    "all": "yarn build && yarn format && yarn lint && yarn package && yarn test"
+    "all": "yarn clean && yarn build && yarn format && yarn lint && yarn package && yarn test"
   },
   "repository": {
     "type": "git",
@@ -33,6 +43,8 @@
     "esm": "^3.2.25"
   },
   "devDependencies": {
+    "@swc/core": "^1.2.120",
+    "@swc/jest": "^0.2.15",
     "@types/jest": "^27.0.3",
     "@types/jsonwebtoken": "^8.5.6",
     "@types/node": "^16.11.13",
@@ -47,8 +59,45 @@
     "js-yaml": "^4.1.0",
     "jsonwebtoken": "^8.5.1",
     "prettier": "2.5.1",
+    "regenerator-runtime": "^0.13.9",
     "ts-jest": "^27.1.1",
     "ts-node": "^10.4.0",
     "typescript": "^4.5.4"
+  },
+  "jest": {
+    "preset": "ts-jest/presets/js-with-ts-esm",
+    "testEnvironment": "node",
+    "clearMocks": true,
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "testMatch": [
+      "<rootDir>/__tests__/*.test.ts"
+    ],
+    "transform": {
+      "^.+\\.(t|j)sx?$": [
+        "ts-jest"
+      ]
+    },
+    "globals": {
+      "ts-jest": {
+        "useESM": true
+      }
+    },
+    "roots": [
+      "<rootDir>"
+    ],
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/dist/$1"
+    },
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules/jest-runtime"
+    ],
+    "verbose": true
   }
 }

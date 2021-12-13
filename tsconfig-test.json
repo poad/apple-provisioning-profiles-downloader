@@ -1,9 +1,0 @@
-{
-  "extends": ".",
-  "ts-node": {
-    "moduleTypes": {
-      "jest.config.js": "cjs"
-    }
-  },
-  "exclude": ["node_modules"]
-}

@@ -5,6 +5,9 @@ import {test} from '@jest/globals'
 import os from 'os'
 import fs from 'fs'
 
+const dirname = () => typeof __dirname !== "undefined" ? __dirname : import.meta.url
+
+
 test('test runs', () => {
   const tmp = fs.mkdtempSync(`${os.tmpdir()}/`, {encoding: 'utf8'})
 
@@ -18,7 +21,7 @@ test('test runs', () => {
   process.env['ACTIONS_STEP_DEBUG'] = 'true'
 
   const np = process.execPath
-  const ip = path.join(__dirname, '..', 'lib', 'main.js')
+  const ip = path.join(dirname(), '..', 'dist', 'main.js')
   const options: cp.ExecFileSyncOptions = {
     env: process.env
   }
@@ -39,7 +42,7 @@ test('test runs by file', () => {
   process.env['ACTIONS_STEP_DEBUG'] = 'true'
 
   const np = process.execPath
-  const ip = path.join(__dirname, '..', 'lib', 'main.js')
+  const ip = path.join(dirname(), '..', 'dist', 'main.js')
   const options: cp.ExecFileSyncOptions = {
     env: process.env
   }
@@ -61,7 +64,7 @@ test('test runs with duration', () => {
   process.env['ACTIONS_STEP_DEBUG'] = 'true'
 
   const np = process.execPath
-  const ip = path.join(__dirname, '..', 'lib', 'main.js')
+  const ip = path.join(dirname(), '..', 'dist', 'main.js')
   const options: cp.ExecFileSyncOptions = {
     env: process.env
   }
