@@ -2581,13 +2581,13 @@ jest-regex-util@^27.4.0:
   integrity sha512-WeCpMpNnqJYMQoOjm1nTtsgbR4XHAk1u00qDoNBQoykM280+/TmgA5Qh5giC1ecy6a5d4hbSsHzpBtu5yvlbEg==
 
 jest-resolve-dependencies@^27.4.4:
-  version "27.4.4"
-  resolved "https://registry.yarnpkg.com/jest-resolve-dependencies/-/jest-resolve-dependencies-27.4.4.tgz#dae11e067a6d6a9553f1386a0ea1efe5be0e2332"
-  integrity sha512-iAnpCXh81sd9nbyqySvm5/aV9X6JZKE0dQyFXTC8tptXcdrgS0vjPFy+mEgzPHxXw+tq4TQupuTa0n8OXwRIxw==
+  version "27.4.5"
+  resolved "https://registry.yarnpkg.com/jest-resolve-dependencies/-/jest-resolve-dependencies-27.4.5.tgz#9398af854bdb12d6a9e5a8a536ee401f889a3ecf"
+  integrity sha512-elEVvkvRK51y037NshtEkEnukMBWvlPzZHiL847OrIljJ8yIsujD2GXRPqDXC4rEVKbcdsy7W0FxoZb4WmEs7w==
   dependencies:
     "@jest/types" "^27.4.2"
     jest-regex-util "^27.4.0"
-    jest-snapshot "^27.4.4"
+    jest-snapshot "^27.4.5"
 
 jest-resolve@^27.4.4, jest-resolve@^27.4.5:
   version "27.4.5"
