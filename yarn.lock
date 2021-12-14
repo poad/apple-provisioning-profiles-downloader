@@ -766,7 +766,7 @@
   resolved "https://registry.yarnpkg.com/@types/json5/-/json5-0.0.29.tgz#ee28707ae94e11d2b827bcbe5270bcea7f3e71ee"
   integrity sha1-7ihweulOEdK4J7y+UnC86n8+ce4=
 
-"@types/jsonwebtoken@^8.5.5", "@types/jsonwebtoken@^8.5.6":
+"@types/jsonwebtoken@^8.5.6":
   version "8.5.6"
   resolved "https://registry.yarnpkg.com/@types/jsonwebtoken/-/jsonwebtoken-8.5.6.tgz#1913e5a61e70a192c5a444623da4901a7b1a9d42"
   integrity sha512-+P3O/xC7nzVizIi5VbF34YtqSonFsdnbXBnWUCYRiKOi1f9gA4sEFvXkrGr/QVV23IbMYvcoerI7nnhDUiWXRQ==
@@ -1008,12 +1008,12 @@ anymatch@^3.0.3:
     normalize-path "^3.0.0"
     picomatch "^2.0.4"
 
-appstore-connect-jwt-generator-core@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/appstore-connect-jwt-generator-core/-/appstore-connect-jwt-generator-core-1.0.1.tgz#6610a235a41ff6fcb3c106cf4cf30661e6749e45"
-  integrity sha512-IZmclrudNjgn+Eatc1u+Tk1rhb13dKtS1wUgNe2Kk2KT/svdlPaLrxtLD7iu5Cb53lmH2nJki3ySIkVKR00rcQ==
+appstore-connect-jwt-generator-core@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/appstore-connect-jwt-generator-core/-/appstore-connect-jwt-generator-core-1.1.1.tgz#d455961dab305ab4c7cbc3126a62bb70a2399f48"
+  integrity sha512-21kygZSDreJG2N+YnLxORHZLmmwyMDnJeLh7llWIsi2RxSSsqbwTjFbu2XgfNgJxGgWu2A17npYCQhwLVd1VxQ==
   dependencies:
-    "@types/jsonwebtoken" "^8.5.5"
+    "@types/jsonwebtoken" "^8.5.6"
     jsonwebtoken "^8.5.1"
     log4js "^6.3.0"
 
