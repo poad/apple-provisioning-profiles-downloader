@@ -1,17 +1,20 @@
 {
   "compilerOptions": {
     "target": "ESNext",
+    "module": "ESNext",
     "lib": [
       "DOM",
       "ESNext"
     ],
+    "outDir": "./dist/esm",
+    "rootDir": "./src",
     "moduleResolution": "Node",
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
     "strict": true,
     "noImplicitAny": true,
-    "esModuleInterop": true,
+    "esModuleInterop": true
   },
-  "exclude": ["node_modules", "./dist"]
+  "exclude": ["node_modules", "./dist", "**/*.test.ts"]
 }
