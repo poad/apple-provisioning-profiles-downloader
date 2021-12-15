@@ -2,7 +2,7 @@ import * as process from 'process'
 import {test, expect} from '@jest/globals'
 import os from 'os'
 import fs from 'fs'
-import appStoreConnect from '../src/client'
+import appStoreConnect from '../dist/client'
 import jwt from 'jsonwebtoken'
 
 test('token test', () => {

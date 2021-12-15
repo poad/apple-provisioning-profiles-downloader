@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 import jwt from 'jsonwebtoken';
-import {tokenSync} from '../dist/cjs/index';
+import {tokenSync} from '../dist/cjs/index.cjs';
 
 describe('Generate JWT for App Store Connect API', () => {
   const PRIVATE_KEY_FILE_PATH = process.env.APPSTORE_PRIVATE_KEY_FILE_PATH || './privateKey.p8';

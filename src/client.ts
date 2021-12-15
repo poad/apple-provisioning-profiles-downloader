@@ -1,5 +1,5 @@
-import {BundleIdsResponse} from './types'
-import token from 'appstore-connect-jwt-generator-core'
+import {BundleIdsResponse} from './@types'
+import { tokenSync } from 'appstore-connect-jwt-generator-core'
 import fetch from 'cross-fetch'
 
 module appStoreConnect {
@@ -45,11 +45,12 @@ module appStoreConnect {
     token: () => string
   } => {
     const {privateKey, issuerId, apiKeyId, duration} = param
-    jwt = token.tokenSync(privateKey, issuerId, apiKeyId, duration)
+    jwt = tokenSync(privateKey, issuerId, apiKeyId, duration)
     return {
       listBundleIds,
       token: () => jwt
     }
   }
 }
+
 export default appStoreConnect
