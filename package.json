@@ -3,13 +3,12 @@
   "version": "1.0.0",
   "private": true,
   "description": "TypeScript template action",
-  "main": "./dist/main.js",
+  "main": "./dist/main.mjs",
   "exports": {
     ".": {
-      "node": "./dist/main.js",
-      "default": "./dist/main.js",
-      "import": "./dist/main.js",
-      "require": "./dist/main.js"
+      "node": "./dist/main.mjs",
+      "default": "./dist/main.mjs",
+      "import": "./dist/main.mjs"
     }
   },
   "type": "module",
@@ -69,6 +68,8 @@
     "testEnvironment": "node",
     "clearMocks": true,
     "moduleFileExtensions": [
+      "mts",
+      "mjs",
       "ts",
       "js"
     ],
@@ -76,7 +77,7 @@
       "<rootDir>/__tests__/*.test.ts"
     ],
     "transform": {
-      "^.+\\.(t|j)sx?$": [
+      "^.+\\.m?(t|j)s$": [
         "ts-jest"
       ]
     },
