@@ -4,7 +4,7 @@
   "private": true,
   "main": "bin/main.js",
   "scripts": {
-    "build": "yarn clean && yarn tsc",
+    "build": "yarn clean && yarn types && yarn swc",
     "swc": "swc src -d bin",
     "types": "tsc -p tsconfig-types.json",
     "tsc": "tsc",
