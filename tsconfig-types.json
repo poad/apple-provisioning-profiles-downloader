@@ -13,7 +13,6 @@
       "DOM",
       "ESNext"
     ],
-    "outDir": "./@types",
     "moduleResolution": "Node",
     "declaration": true,
     "declarationMap": true,
