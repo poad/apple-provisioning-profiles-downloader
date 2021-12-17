@@ -2,18 +2,27 @@
   "name": "download-provisioning-profiles",
   "version": "1.0.0",
   "private": true,
-  "main": "dist/main.cjs",
+  "main": "bin/main.js",
   "scripts": {
-    "build": "yarn clean && tsc --emitDeclarationOnly && swc src -d dist",
+    "build": "yarn clean && yarn tsc",
+    "swc": "swc src -d bin",
+    "types": "tsc -p tsconfig-types.json",
+    "tsc": "tsc",
     "format": "prettier --write **/*.ts",
     "format-check": "prettier --check **/*.ts",
-    "lint": "eslint src/**/*.cts",
+    "lint": "eslint src/**/*.ts",
     "package": "ncc build --source-map --license licenses.txt",
     "test": "jest --coverage",
     "dev": "ts-node src/main.ts",
-    "clean": "git clean -Xdf -e '!/.idea/**' -e '!/node_modules' -e '!/node_modules/**' && rimraf dist",
+    "clean": "git clean -Xdf -e '!/.idea/**' -e '!/node_modules' -e '!/node_modules/**' && rimraf bin",
     "clean:dry": "git clean -Xdfn -e '!/.idea/**' -e '!/node_modules' -e '!/node_modules/**'",
     "all": "yarn build && yarn format && yarn lint && yarn package && yarn test"
+  },
+  "exports": {
+    ".": {
+      "import": "./bin/main.js",
+      "require": "./bin/main.js"
+    }
   },
   "repository": {
     "type": "git",

@@ -1,0 +1,35 @@
+{
+  "extends": ".",
+  "ts-node": {
+    "transpileOnly": true,
+    "transpiler": "ts-node/transpilers/swc-experimental",
+    "moduleTypes": {
+      "jest.config.js": "cjs"
+    }
+  },
+  "compilerOptions": {
+    "target": "ESNext",
+    "lib": [
+      "DOM",
+      "ESNext"
+    ],
+    "outDir": "./@types",
+    "moduleResolution": "Node",
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "emitDeclarationOnly": true
+  },
+  "files": [
+    "src/@types/index.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "tests",
+    "src/*.ts"
+  ]
+}

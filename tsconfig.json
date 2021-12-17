@@ -3,21 +3,20 @@
     "target": "ESNext",
     "lib": ["ESNext"],
     "module": "ES2020",
-    "outDir": "./dist",
+    "outDir": "./bin",
     "rootDir": "./src",
     "strict": true,
     "noImplicitAny": true,
     "esModuleInterop": true,
     "isolatedModules": true,
     "sourceMap": true,
-    "declaration": true,
-    "declarationMap": true,
     "forceConsistentCasingInFileNames": true,
     "moduleResolution": "Node",
-    "allowJs": true,
-    "typeRoots": [
-      "./src/@types"
-    ]
+    "allowJs": true
   },
-  "exclude": ["node_modules", "**/*.test.ts", "dist"]
+  "files": [
+    "src/main.ts",
+    "src/client.ts"
+  ],
+  "exclude": ["node_modules", "**/*.test.ts", "bin", "src/@types/*.ts"]
 }

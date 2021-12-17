@@ -1,12 +1,16 @@
 import * as core from '@actions/core'
 import * as fs from 'fs'
 import path from 'path'
-import { BundleIdsResponse, Profile } from './@types'
+import {fileURLToPath} from 'url'
+import {BundleIdsResponse, Profile} from './@types'
 import * as io from '@actions/io'
-import appStoreConnect from './client'
+import Client from './client.js'
 
-module ProvisioningProfileDownloader {
-  export const run = async (): Promise<void> => {
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+
+export class ProvisioningProfileDownloader {
+  run = async (): Promise<void> => {
     try {
       const bundleId: string = core.getInput('bundle-id', {
         required: true,
@@ -53,7 +57,9 @@ module ProvisioningProfileDownloader {
 
       const duration = tokenDuration !== '' ? Number(tokenDuration) : undefined
       if (duration !== undefined && (duration < 1 || duration > 1200)) {
-        throw new Error("The 'token-duration' must be in the range of 1 to 1200.")
+        throw new Error(
+          "The 'token-duration' must be in the range of 1 to 1200."
+        )
       }
 
       if (!process.env.HOME) {
@@ -71,7 +77,7 @@ module ProvisioningProfileDownloader {
       const privateKey =
         apiPrivateKey || fs.readFileSync(path.resolve(apiPrivateKeyFile))
 
-      const client = appStoreConnect.Client({
+      const client = new Client({
         privateKey,
         issuerId,
         apiKeyId,
@@ -137,7 +143,8 @@ module ProvisioningProfileDownloader {
           const buffer = Buffer.from((await output).content, 'base64')
           fs.writeFileSync((await output).fullPath, buffer)
           core.info(
-            `Wrote ${(await output).profileType} profile '${(await output).name
+            `Wrote ${(await output).profileType} profile '${
+              (await output).name
             }' to '${(await output).fullPath}'.`
           )
         })
@@ -165,4 +172,4 @@ module ProvisioningProfileDownloader {
   }
 }
 
-ProvisioningProfileDownloader.run()
+new ProvisioningProfileDownloader().run()

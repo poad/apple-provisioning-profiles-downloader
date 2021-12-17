@@ -4,22 +4,29 @@
       "syntax": "typescript",
       "tsx": false,
       "decorators": true,
-      "dynamicImport": true
+      "dynamicImport": false
     },
-    "target": "es2020",
+    "target": "es2021",
     "loose": true,
     "transform": {
-      "legacyDecorator": true
-    }
+      "legacyDecorator": true,
+      "decoratorMetadata": true,
+      "optimizer": {
+        "jsonify": {
+          "minCost": 0
+        }
+      }
+    },
+    "keepClassNames": true
   },
   "sourceMaps": true,
   "inlineSourcesContent": true,
   "minify": false,
   "module": {
     "type": "es6",
-    "strict": false,
+    "strict": true,
     "strictMode": true,
-    "lazy": true,
+    "lazy": false,
     "noInterop": false
   }
 }
