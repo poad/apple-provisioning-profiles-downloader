@@ -76,7 +76,6 @@ Thumbs.db
 # Ignore built ts files
 __tests__/runner/*
 lib/**/*.map
-dist
 
 !node_modules/.bin
 !node_modules/@actions

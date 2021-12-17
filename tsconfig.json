@@ -1,16 +1,22 @@
 {
   "compilerOptions": {
-    "target": "ES2019",
-    "lib": ["ES2019"],
-    "module": "commonjs",
-    "outDir": "./lib",
+    "target": "ESNext",
+    "lib": ["ESNext"],
+    "module": "ES2020",
+    "outDir": "./bin",
     "rootDir": "./src",
     "strict": true,
     "noImplicitAny": true,
     "esModuleInterop": true,
     "isolatedModules": true,
     "sourceMap": true,
-    "moduleResolution": "Node"
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "Node",
+    "allowJs": true
   },
-  "exclude": ["node_modules", "**/*.test.ts"]
+  "files": [
+    "src/main.ts",
+    "src/client.ts"
+  ],
+  "exclude": ["node_modules", "**/*.test.ts", "bin", "src/@types/*.ts"]
 }

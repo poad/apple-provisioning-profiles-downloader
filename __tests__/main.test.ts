@@ -18,7 +18,7 @@ test('test runs', () => {
   process.env['ACTIONS_STEP_DEBUG'] = 'true'
 
   const np = process.execPath
-  const ip = path.join(__dirname, '..', 'lib', 'main.js')
+  const ip = path.join(__dirname, '..', 'bin', 'main.js')
   const options: cp.ExecFileSyncOptions = {
     env: process.env
   }
@@ -39,7 +39,7 @@ test('test runs by file', () => {
   process.env['ACTIONS_STEP_DEBUG'] = 'true'
 
   const np = process.execPath
-  const ip = path.join(__dirname, '..', 'lib', 'main.js')
+  const ip = path.join(__dirname, '..', 'bin', 'main.js')
   const options: cp.ExecFileSyncOptions = {
     env: process.env
   }
@@ -61,7 +61,7 @@ test('test runs with duration', () => {
   process.env['ACTIONS_STEP_DEBUG'] = 'true'
 
   const np = process.execPath
-  const ip = path.join(__dirname, '..', 'lib', 'main.js')
+  const ip = path.join(__dirname, '..', 'bin', 'main.js')
   const options: cp.ExecFileSyncOptions = {
     env: process.env
   }

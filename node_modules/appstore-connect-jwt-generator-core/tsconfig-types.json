@@ -6,12 +6,18 @@
       "ESNext"
     ],
     "rootDir": "./src",
-    "outDir": "./dist",
+    "outDir": "./@types",
     "moduleResolution": "Node",
+    "declaration": true,
+    "declarationMap": true,
     "sourceMap": true,
     "strict": true,
     "noImplicitAny": true,
     "esModuleInterop": true,
+    "emitDeclarationOnly": true
   },
-  "exclude": ["node_modules", "./dist"]
+  "files": [
+    "src/index.ts"
+  ],
+  "exclude": ["node_modules", "dist", "tests"]
 }

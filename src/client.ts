@@ -1,10 +1,25 @@
-import {BundleIdsResponse} from './types'
-import token from 'appstore-connect-jwt-generator-core'
+import {BundleIdsResponse} from './@types'
+import {tokenSync} from 'appstore-connect-jwt-generator-core'
 import fetch from 'cross-fetch'
 
-module appStoreConnect {
-  let jwt: string
-  const listBundleIds = async (query?: {
+interface IClient {
+  listBundleIds: (query?: {[key: string]: string}) => Promise<BundleIdsResponse>
+  token: () => string
+}
+
+export class Client implements IClient {
+  jwt: string
+
+  constructor(param: {
+    privateKey: string | Buffer
+    issuerId: string
+    apiKeyId: string
+    duration?: number
+  }) {
+    const {privateKey, issuerId, apiKeyId, duration} = param
+    this.jwt = tokenSync(privateKey, issuerId, apiKeyId, duration)
+  }
+  listBundleIds = async (query?: {
     [key: string]: string
   }): Promise<BundleIdsResponse> => {
     const queryString = query
@@ -14,7 +29,7 @@ module appStoreConnect {
       : ''
 
     const headers = {
-      Authorization: `Bearer ${jwt}`
+      Authorization: `Bearer ${this.jwt}`
     }
 
     const uri = `https://api.appstoreconnect.apple.com/v1/bundleIds${
@@ -32,24 +47,7 @@ module appStoreConnect {
     }
     return response.json() as Promise<BundleIdsResponse>
   }
-
-  export const Client = (param: {
-    privateKey: string | Buffer
-    issuerId: string
-    apiKeyId: string
-    duration?: number
-  }): {
-    listBundleIds: (query?: {
-      [key: string]: string
-    }) => Promise<BundleIdsResponse>
-    token: () => string
-  } => {
-    const {privateKey, issuerId, apiKeyId, duration} = param
-    jwt = token.tokenSync(privateKey, issuerId, apiKeyId, duration)
-    return {
-      listBundleIds,
-      token: () => jwt
-    }
-  }
+  token = (): string => this.jwt
 }
-export default appStoreConnect
+
+export default Client

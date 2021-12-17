@@ -2,8 +2,8 @@ import * as process from 'process'
 import {test, expect} from '@jest/globals'
 import os from 'os'
 import fs from 'fs'
-import appStoreConnect from '../src/client'
 import jwt from 'jsonwebtoken'
+import {Client} from '../src/client'
 
 test('token test', () => {
   const tmp = fs.mkdtempSync(`${os.tmpdir()}/`, {encoding: 'utf8'})
@@ -13,7 +13,7 @@ test('token test', () => {
   const issuerId = process.env.ISSUER_ID!
   const privateKey = process.env.API_PRIVATE_KEY!
 
-  const client = appStoreConnect.Client({
+  const client = new Client({
     privateKey,
     issuerId,
     apiKeyId
@@ -39,7 +39,7 @@ test('token test', async () => {
   const profileType = process.env.PROFILE_TYPE!
   const privateKey = process.env.API_PRIVATE_KEY!
 
-  const client = appStoreConnect.Client({
+  const client = new Client({
     privateKey,
     issuerId,
     apiKeyId
@@ -73,7 +73,7 @@ test('token duration test', () => {
   const issuerId = process.env.ISSUER_ID!
   const privateKey = process.env.API_PRIVATE_KEY!
 
-  const client = appStoreConnect.Client({
+  const client = new Client({
     privateKey,
     issuerId,
     apiKeyId,
