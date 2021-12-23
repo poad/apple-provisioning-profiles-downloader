@@ -11,7 +11,7 @@
     "format": "prettier --write **/*.ts",
     "format-check": "prettier --check **/*.ts",
     "lint": "eslint src/**/*.ts",
-    "package": "ncc build --source-map --license licenses.txt",
+    "package": "ncc build --source-map --license licenses.txt -o bin",
     "test": "jest --coverage",
     "dev": "ts-node src/main.ts",
     "clean": "git clean -Xdf -e '!/.idea/**' -e '!/node_modules' -e '!/node_modules/**' && rimraf bin",
@@ -21,7 +21,7 @@
   "exports": {
     ".": {
       "import": "./bin/main.js",
-      "require": "./bin/main.js"
+      "require": "./bin/index.js"
     }
   },
   "repository": {
@@ -50,7 +50,7 @@
     "@swc/jest": "^0.2.15",
     "@types/jest": "^27.0.3",
     "@types/jsonwebtoken": "^8.5.6",
-    "@types/node": "^17.0.2",
+    "@types/node": "^17.0.4",
     "@typescript-eslint/parser": "^5.8.0",
     "@vercel/ncc": "^0.33.1",
     "babel-jest": "^27.4.5",
