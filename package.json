@@ -58,7 +58,7 @@
     "eslint-plugin-github": "^4.3.5",
     "eslint-plugin-jest": "^25.3.4",
     "eslint-plugin-prettier": "^4.0.0",
-    "jest": "^27.4.6",
+    "jest": "^27.4.7",
     "js-yaml": "^4.1.0",
     "jsonwebtoken": "^8.5.1",
     "prettier": "2.5.1",
