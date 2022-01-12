@@ -69,7 +69,38 @@
   "jest": {
     "transform": {
       "^.+\\.(m|c)?(t|j)sx?$": [
-        "@swc/jest"
+        "@swc/jest",{
+          "jsc": {
+            "parser": {
+              "syntax": "typescript",
+              "tsx": false,
+              "decorators": true,
+              "dynamicImport": false
+            },
+            "target": "es2021",
+            "loose": true,
+            "transform": {
+              "legacyDecorator": true,
+              "decoratorMetadata": true,
+              "optimizer": {
+                "jsonify": {
+                  "minCost": 0
+                }
+              }
+            },
+            "keepClassNames": true
+          },
+          "sourceMaps": true,
+          "inlineSourcesContent": true,
+          "minify": false,
+          "module": {
+            "type": "es6",
+            "strict": true,
+            "strictMode": true,
+            "lazy": false,
+            "noInterop": false
+          }
+        }
       ]
     },
     "verbose": true
