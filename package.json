@@ -47,7 +47,7 @@
     "@swc/cli": "^0.1.55",
     "@swc/core": "^1.2.128",
     "@swc/helpers": "^0.3.2",
-    "@swc/jest": "^0.2.16",
+    "@swc/jest": "^0.2.17",
     "@types/jest": "^27.4.0",
     "@types/jsonwebtoken": "^8.5.7",
     "@types/node": "^17.0.8",
