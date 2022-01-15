@@ -12,6 +12,7 @@ const signOption = (issuerId, privateKeyId, duration) => ({
     expiresIn: duration,
     issuer: issuerId,
 });
+function jwtGenCore() { }
 function tokenSync(privateKey, issuerId, privateKeyId, duration = 500) { return jsonwebtoken_1.default.sign({}, privateKey, signOption(issuerId, privateKeyId, duration)); }
 exports.tokenSync = tokenSync;
 ;
@@ -20,4 +21,8 @@ async function token(privateKey, issuerId, privateKeyId, duration = 500) {
 }
 exports.token = token;
 ;
+jwtGenCore.tokenSync = tokenSync;
+jwtGenCore.token = token;
+module.exports = exports = jwtGenCore;
+exports.default = jwtGenCore;
 //# sourceMappingURL=index.cjs.map
