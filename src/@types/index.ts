@@ -1,4 +1,4 @@
-export type BundleIdPlatform = 'IOS' | 'MAC_OS'
+export type BundleIdPlatform = 'IOS' | 'MAC_OS';
 
 export type ProfileType =
   | 'IOS_APP_DEVELOPMENT'
@@ -14,115 +14,115 @@ export type ProfileType =
   | 'TVOS_APP_INHOUSE'
   | 'MAC_CATALYST_APP_DEVELOPMENT'
   | 'MAC_CATALYST_APP_STORE'
-  | 'MAC_CATALYST_APP_DIRECT'
-export type ProfileState = 'ACTIVE' | 'INVALID'
+  | 'MAC_CATALYST_APP_DIRECT';
+export type ProfileState = 'ACTIVE' | 'INVALID';
 
 export interface ResourceLinks {
-  self: string
+  self: string;
 }
 
 export interface BundleId {
-  type: 'bundleIds'
-  id: string
+  type: 'bundleIds';
+  id: string;
   attributes: {
-    name?: string
-    platform?: BundleIdPlatform
-    identifier?: string
-    seedId?: string
-  }
+    name?: string;
+    platform?: BundleIdPlatform;
+    identifier?: string;
+    seedId?: string;
+  };
   relationships: {
     profiles?: {
       links: {
-        self?: string
-        related?: string
-      }
-      meta: PagingInformation
+        self?: string;
+        related?: string;
+      };
+      meta: PagingInformation;
       data: [
         {
-          type: 'profiles'
-          id: string
+          type: 'profiles';
+          id: string;
         }
-      ]
-    }
+      ];
+    };
     bundleIdCapabilities?: {
       links?: {
-        self?: string
-        related?: string
-      }
-      meta: PagingInformation
+        self?: string;
+        related?: string;
+      };
+      meta: PagingInformation;
       data: [
         {
-          type: 'bundleIdCapabilities'
-          id: string
+          type: 'bundleIdCapabilities';
+          id: string;
         }
-      ]
-    }
+      ];
+    };
     app?: {
       links?: {
-        self?: string
-        related?: string
-      }
+        self?: string;
+        related?: string;
+      };
       data: {
-        type: 'app'
-        id: string
-      }
-    }
-  }
-  links: ResourceLinks
+        type: 'app';
+        id: string;
+      };
+    };
+  };
+  links: ResourceLinks;
 }
 
 export interface Profile {
-  type: 'profiles'
-  id: string
+  type: 'profiles';
+  id: string;
   attributes: {
-    name?: string
-    platform?: BundleIdPlatform
-    profileType?: ProfileType
-    profileState?: ProfileState
-    profileContent?: string
-    uuid?: string
-    createdDate?: Date
-    expirationDate?: Date
-  }
+    name?: string;
+    platform?: BundleIdPlatform;
+    profileType?: ProfileType;
+    profileState?: ProfileState;
+    profileContent?: string;
+    uuid?: string;
+    createdDate?: Date;
+    expirationDate?: Date;
+  };
   relationships: {
     bundleId?: {
       links?: {
-        self?: string
-        related?: string
-      }
+        self?: string;
+        related?: string;
+      };
       data: {
-        type: 'bundleIds'
-        id: string
-      }
-    }
+        type: 'bundleIds';
+        id: string;
+      };
+    };
     devices?: {
       links?: {
-        self?: string
-        related?: string
-      }
-      meta: PagingInformation
+        self?: string;
+        related?: string;
+      };
+      meta: PagingInformation;
       data: [
         {
-          type: 'devices'
-          id: string
+          type: 'devices';
+          id: string;
         }
-      ]
-    }
+      ];
+    };
     certificates?: {
       links?: {
-        self?: string
-        related?: string
-      }
-      meta: PagingInformation
+        self?: string;
+        related?: string;
+      };
+      meta: PagingInformation;
       data: [
         {
-          type: 'certificates'
-          id: string
+          type: 'certificates';
+          id: string;
         }
-      ]
-    }
-  }
-  links: ResourceLinks
+      ];
+    };
+  };
+  links: ResourceLinks;
 }
 
 export interface CapabilityOption {
@@ -132,31 +132,31 @@ export interface CapabilityOption {
     | 'COMPLETE_PROTECTION'
     | 'PROTECTED_UNLESS_OPEN'
     | 'PROTECTED_UNTIL_FIRST_USER_AUTH'
-    | 'PRIMARY_APP_CONSENT'
-  name: string
-  description: string
-  enabledByDefault: boolean
-  enabled: boolean
-  supportsWildcard: boolean
+    | 'PRIMARY_APP_CONSENT';
+  name: string;
+  description: string;
+  enabledByDefault: boolean;
+  enabled: boolean;
+  supportsWildcard: boolean;
 }
 
 export interface CapabilitySetting {
   key?:
     | 'ICLOUD_VERSION'
     | 'DATA_PROTECTION_PERMISSION_LEVEL'
-    | 'APPLE_ID_AUTH_APP_CONSENT'
-  name?: string
-  description?: string
-  enabledByDefault?: boolean
-  visible?: boolean
-  allowedInstances?: 'ENTRY' | 'SINGLE' | 'MULTIPLE'
-  minInstances?: number
-  options?: CapabilityOption[]
+    | 'APPLE_ID_AUTH_APP_CONSENT';
+  name?: string;
+  description?: string;
+  enabledByDefault?: boolean;
+  visible?: boolean;
+  allowedInstances?: 'ENTRY' | 'SINGLE' | 'MULTIPLE';
+  minInstances?: number;
+  options?: CapabilityOption[];
 }
 
 export interface BundleIdCapability {
-  type: 'bundleIdCapabilities'
-  id: string
+  type: 'bundleIdCapabilities';
+  id: string;
   attributes: {
     capabilityType?:
       | 'ICLOUD'
@@ -186,223 +186,227 @@ export interface BundleIdCapability {
       | 'COREMEDIA_HLS_LOW_LATENCY'
       | 'SYSTEM_EXTENSION_INSTALL'
       | 'USER_MANAGEMENT'
-      | 'APPLE_ID_AUTH'
-    settings?: CapabilitySetting[]
-  }
-  links: ResourceLinks
+      | 'APPLE_ID_AUTH';
+    settings?: CapabilitySetting[];
+  };
+  links: ResourceLinks;
 }
 
 export interface App {
-  type: 'apps'
-  id: string
+  type: 'apps';
+  id: string;
   attributes: {
-    name?: string
-    bundleId?: string
-    sku?: string
-    primaryLocale?: string
-    isOrEverWasMadeForKids?: boolean
-    availableInNewTerritories?: boolean
+    name?: string;
+    bundleId?: string;
+    sku?: string;
+    primaryLocale?: string;
+    isOrEverWasMadeForKids?: boolean;
+    availableInNewTerritories?: boolean;
     contentRightsDeclaration?:
       | 'DOES_NOT_USE_THIRD_PARTY_CONTENT'
-      | 'USES_THIRD_PARTY_CONTENT'
-  }
+      | 'USES_THIRD_PARTY_CONTENT';
+  };
   relationships: {
     betaGroups?: {
       links?: {
-        self?: string
-        related?: string
-      }
-      meta: PagingInformation
+        self?: string;
+        related?: string;
+      };
+      meta: PagingInformation;
       data: [
         {
-          type: 'betaGroups'
-          id: string
+          type: 'betaGroups';
+          id: string;
         }
-      ]
-    }
+      ];
+    };
     appStoreVersions?: {
       links?: {
-        self?: string
-        related?: string
-      }
-      meta: PagingInformation
+        self?: string;
+        related?: string;
+      };
+      meta: PagingInformation;
       data: [
         {
-          type: 'appStoreVersions'
-          id: string
+          type: 'appStoreVersions';
+          id: string;
         }
-      ]
-    }
+      ];
+    };
     preReleaseVersions?: {
       links?: {
-        self?: string
-        related?: string
-      }
-      meta: PagingInformation
+        self?: string;
+        related?: string;
+      };
+      meta: PagingInformation;
       data: [
         {
-          type: 'preReleaseVersions'
-          id: string
+          type: 'preReleaseVersions';
+          id: string;
         }
-      ]
-    }
+      ];
+    };
     betaAppLocalizations?: {
       links?: {
-        self?: string
-        related?: string
-      }
-      meta: PagingInformation
+        self?: string;
+        related?: string;
+      };
+      meta: PagingInformation;
       data: [
         {
-          type: 'betaAppLocalizations'
-          id: string
+          type: 'betaAppLocalizations';
+          id: string;
         }
-      ]
-    }
+      ];
+    };
     builds?: {
       links?: {
-        self?: string
-        related?: string
-      }
-      meta: PagingInformation
+        self?: string;
+        related?: string;
+      };
+      meta: PagingInformation;
       data: [
         {
-          type: 'builds'
-          id: string
+          type: 'builds';
+          id: string;
         }
-      ]
-    }
+      ];
+    };
     betaLicenseAgreement?: {
       links?: {
-        self?: string
-        related?: string
-      }
+        self?: string;
+        related?: string;
+      };
       data: [
         {
-          type: 'betaLicenseAgreement'
-          id: string
+          type: 'betaLicenseAgreement';
+          id: string;
         }
-      ]
-    }
+      ];
+    };
     betaAppReviewDetail?: {
       links?: {
-        self?: string
-        related?: string
-      }
+        self?: string;
+        related?: string;
+      };
       data: [
         {
-          type: 'betaAppReviewDetail'
-          id: string
+          type: 'betaAppReviewDetail';
+          id: string;
         }
-      ]
-    }
+      ];
+    };
     appInfos?: {
       links?: {
-        self?: string
-        related?: string
-      }
-      meta: PagingInformation
+        self?: string;
+        related?: string;
+      };
+      meta: PagingInformation;
       data: [
         {
-          type: 'appInfos'
-          id: string
+          type: 'appInfos';
+          id: string;
         }
-      ]
-    }
+      ];
+    };
     endUserLicenseAgreement?: {
       links?: {
-        self?: string
-        related?: string
-      }
+        self?: string;
+        related?: string;
+      };
       data: [
         {
-          type: 'endUserLicenseAgreement'
-          id: string
+          type: 'endUserLicenseAgreement';
+          id: string;
         }
-      ]
-    }
+      ];
+    };
     preOrder?: {
       links?: {
-        self?: string
-        related?: string
-      }
+        self?: string;
+        related?: string;
+      };
       data: [
         {
-          type: 'preOrder'
-          id: string
+          type: 'preOrder';
+          id: string;
         }
-      ]
-    }
+      ];
+    };
     availableTerritories?: {
       links?: {
-        self?: string
-        related?: string
-      }
-      meta: PagingInformation
+        self?: string;
+        related?: string;
+      };
+      meta: PagingInformation;
       data: [
         {
-          type: 'availableTerritories'
-          id: string
+          type: 'availableTerritories';
+          id: string;
         }
-      ]
-    }
+      ];
+    };
     inAppPurchases?: {
       links?: {
-        self?: string
-        related?: string
-      }
-      meta: PagingInformation
+        self?: string;
+        related?: string;
+      };
+      meta: PagingInformation;
       data: [
         {
-          type: 'inAppPurchases'
-          id: string
+          type: 'inAppPurchases';
+          id: string;
         }
-      ]
-    }
+      ];
+    };
     gameCenterEnabledVersions?: {
       links?: {
-        self?: string
-        related?: string
-      }
-      meta: PagingInformation
+        self?: string;
+        related?: string;
+      };
+      meta: PagingInformation;
       data: [
         {
-          type: 'gameCenterEnabledVersions'
-          id: string
+          type: 'gameCenterEnabledVersions';
+          id: string;
         }
-      ]
-    }
-  }
-  links: ResourceLinks
+      ];
+    };
+  };
+  links: ResourceLinks;
 }
 
 export interface PagedDocumentLinks {
-  self: string
-  first?: string
-  next?: string
+  self: string;
+  first?: string;
+  next?: string;
 }
 
 export interface PagingInformation {
   paging: {
-    total: number
-    limit: number
-  }
+    total: number;
+    limit: number;
+  };
 }
 
 export interface BundleIdsResponse {
-  data: BundleId[]
-  included: (Profile | BundleIdCapability | App)[]
-  links: PagedDocumentLinks
-  meta: PagingInformation
+  data: BundleId[];
+  included: (Profile | BundleIdCapability | App)[];
+  links: PagedDocumentLinks;
+  meta: PagingInformation;
 }
 
 export interface ErrorResponse {
   errors: [
     {
-      status: string
-      code: string
-      title: string
-      detail: string
+      status: string;
+      code: string;
+      title: string;
+      detail: string;
     }
-  ]
+  ];
 }
+
+const Types = (): void => {};
+
+export default Types;

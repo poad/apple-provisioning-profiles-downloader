@@ -2,10 +2,7 @@
   "extends": ".",
   "ts-node": {
     "transpileOnly": true,
-    "transpiler": "ts-node/transpilers/swc-experimental",
-    "moduleTypes": {
-      "jest.config.js": "cjs"
-    }
+    "transpiler": "ts-node/transpilers/swc-experimental"
   },
   "compilerOptions": {
     "target": "ESNext",

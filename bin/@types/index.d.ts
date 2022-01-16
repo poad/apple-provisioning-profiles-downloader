@@ -341,4 +341,6 @@ export interface ErrorResponse {
         }
     ];
 }
+declare const Types: () => void;
+export default Types;
 //# sourceMappingURL=index.d.ts.map

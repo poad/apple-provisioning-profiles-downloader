@@ -3,11 +3,30 @@
     "extends": ["plugin:github/recommended"],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
-      "ecmaVersion": 9,
+      "files": ["*.ts", "*.tsx", "*.mts"],
+      "ecmaVersion": 12,
       "sourceType": "module",
-      "project": "./tsconfig.json"
+      "project": "./tsconfig-test.json"
     },
     "rules": {
+      "semi": [
+        "error",
+        "always"
+      ],
+      "semi-spacing": [
+        "error",
+        {
+          "after": true,
+          "before": false
+        }
+      ],
+      "semi-style": [
+        "error",
+        "last"
+      ],
+      "no-extra-semi": "error",
+      "no-unexpected-multiline": "error",
+      "no-unreachable": "error",
       "eslint-comments/no-use": "off",
       "import/no-namespace": "off",
       "no-unused-vars": "off",
@@ -42,10 +61,10 @@
       "@typescript-eslint/promise-function-async": "error",
       "@typescript-eslint/require-array-sort-compare": "error",
       "@typescript-eslint/restrict-plus-operands": "error",
-      "semi": "off",
-      "@typescript-eslint/semi": ["error", "never"],
+      "@typescript-eslint/semi": "error",
       "@typescript-eslint/type-annotation-spacing": "error",
-      "@typescript-eslint/unbound-method": "error"
+      "@typescript-eslint/unbound-method": "error",
+      "filenames/match-regex": "off"
     },
     "env": {
       "node": true,

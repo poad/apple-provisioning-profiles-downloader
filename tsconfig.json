@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "ESNext",
     "lib": ["ESNext"],
-    "module": "ES2020",
+    "module": "esnext",
     "outDir": "./bin",
     "rootDir": "./src",
     "strict": true,
@@ -15,8 +15,8 @@
     "allowJs": true
   },
   "files": [
-    "src/main.ts",
-    "src/client.ts"
+    "src/main.mts",
+    "src/client.mts"
   ],
   "exclude": ["node_modules", "**/*.test.ts", "bin", "src/@types/*.ts"]
 }

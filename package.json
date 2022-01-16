@@ -2,17 +2,16 @@
   "name": "download-provisioning-profiles",
   "version": "1.0.3",
   "private": true,
-  "main": "bin/main.js",
+  "main": "bin/main.mjs",
   "scripts": {
-    "build": "yarn clean && yarn types && yarn swc",
-    "swc": "swc src -d bin",
+    "build": "yarn clean && yarn types && yarn tsc",
     "types": "tsc -p tsconfig-types.json",
     "tsc": "tsc",
     "format": "prettier --write **/*.ts",
     "format-check": "prettier --check **/*.ts",
-    "lint": "eslint src/**/*.ts",
+    "lint": "eslint **/*.ts",
     "package": "ncc build --source-map --license licenses.txt -o bin",
-    "test": "jest --coverage",
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest --coverage",
     "dev": "ts-node src/main.ts",
     "clean": "git clean -Xdf -e '!/.idea/**' -e '!/node_modules' -e '!/node_modules/**' && rimraf bin",
     "clean:dry": "git clean -Xdfn -e '!/.idea/**' -e '!/node_modules' -e '!/node_modules/**'",
@@ -20,8 +19,7 @@
   },
   "exports": {
     ".": {
-      "import": "./bin/main.js",
-      "require": "./bin/index.js"
+      "import": "./bin/main.mjs"
     }
   },
   "repository": {
@@ -34,14 +32,16 @@
     "setup"
   ],
   "type": "module",
+  "types": "bin/@types/index.d.ts",
   "author": "Kenji Saito",
   "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.6.0",
     "@actions/io": "^1.1.1",
     "appstore-connect-jwt-generator-core": "^1.1.6",
-    "cross-fetch": "^3.1.4",
-    "esm": "^3.2.25"
+    "esm": "^3.2.25",
+    "jsonwebtoken": "^8.5.1",
+    "node-fetch": "^3.1.0"
   },
   "devDependencies": {
     "@swc/cli": "^0.1.55",
@@ -60,15 +60,32 @@
     "eslint-plugin-prettier": "^4.0.0",
     "jest": "^27.4.7",
     "js-yaml": "^4.1.0",
-    "jsonwebtoken": "^8.5.1",
     "prettier": "2.5.1",
     "swc-loader": "^0.1.15",
     "ts-node": "^10.4.0",
     "typescript": "^4.5.4"
   },
   "jest": {
+    "testEnvironment": "node",
+    "clearMocks": true,
+    "extensionsToTreatAsEsm": [
+      ".ts",
+      ".mts"
+    ],
+    "moduleFileExtensions": [
+      "mts",
+      "ts",
+      "js",
+      "mjs",
+      "json",
+      "node"
+    ],
+    "testMatch": [
+      "**/__tests__/*.test.ts",
+      "**/__tests__/*.test.mts"
+    ],
     "transform": {
-      "^.+\\.(m|c)?(t|j)sx?$": [
+      "^.+\\.(t|j)sx?$": [
         "@swc/jest",
         {
           "jsc": {
@@ -76,34 +93,40 @@
               "syntax": "typescript",
               "tsx": false,
               "decorators": true,
-              "dynamicImport": false
+              "dynamicImport": true
+            },
+            "minify": {
+              "compress": {
+                "unused": true
+              },
+              "mangle": true
             },
             "target": "es2021",
-            "loose": true,
             "transform": {
-              "legacyDecorator": true,
-              "decoratorMetadata": true,
               "optimizer": {
                 "jsonify": {
                   "minCost": 0
                 }
               }
-            },
-            "keepClassNames": true
+            }
           },
+          "minify": true,
           "sourceMaps": true,
-          "inlineSourcesContent": true,
-          "minify": false,
           "module": {
             "type": "es6",
             "strict": true,
             "strictMode": true,
-            "lazy": false,
+            "lazy": true,
             "noInterop": false
           }
         }
       ]
     },
+    "modulePaths": [
+      "<rootDir>/src",
+      "<rootDir>/dist",
+      "<rootDir>/node_modules"
+    ],
     "verbose": true
   }
 }
