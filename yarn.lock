@@ -2776,16 +2776,16 @@ jest-util@^27.5.0, jest-util@^27.5.1:
     picomatch "^2.2.3"
 
 jest-validate@^27.5.0:
-  version "27.5.0"
-  resolved "https://registry.yarnpkg.com/jest-validate/-/jest-validate-27.5.0.tgz#b3df32372d2c832fa5a5e31ee2c37f94f79f7f1f"
-  integrity sha512-2XZzQWNrY9Ypo11mm4ZeVjvr++CQG/45XnmA2aWwx155lTwy1JGFI8LpQ2dBCSAeO21ooqg/FCIvv9WwfnPClA==
+  version "27.5.1"
+  resolved "https://registry.yarnpkg.com/jest-validate/-/jest-validate-27.5.1.tgz#9197d54dc0bdb52260b8db40b46ae668e04df067"
+  integrity sha512-thkNli0LYTmOI1tDB3FI1S1RTp/Bqyd9pTarJwL87OIBFuqEb5Apv5EaApEudYg4g86e3CT6kM0RowkhtEnCBQ==
   dependencies:
-    "@jest/types" "^27.5.0"
+    "@jest/types" "^27.5.1"
     camelcase "^6.2.0"
     chalk "^4.0.0"
-    jest-get-type "^27.5.0"
+    jest-get-type "^27.5.1"
     leven "^3.1.0"
-    pretty-format "^27.5.0"
+    pretty-format "^27.5.1"
 
 jest-watcher@^27.5.0:
   version "27.5.0"
