@@ -697,10 +697,10 @@
   resolved "https://registry.yarnpkg.com/@swc/helpers/-/helpers-0.3.3.tgz#8ea0e4a96ba18c2d33463aa4dbc7b0ef46232cd6"
   integrity sha512-NdRQSjcceaXsQDNYyK0wWyRvrn5rsvugK8vnTiRB2i0UCaD2slUFUq28tmojILW5A04oF+sZRMxd0Cy7xS/y0A==
 
-"@swc/jest@^0.2.17":
-  version "0.2.17"
-  resolved "https://registry.yarnpkg.com/@swc/jest/-/jest-0.2.17.tgz#0a36083cf5bca39c3c03323cdfc84b61fd670ac2"
-  integrity sha512-n/g989+O8xxMcTZnP0phDrrgezGZBQBf7cX4QuzEsn07QkWbqmMsfaCxdF0kzajXublXWJ8yk5vRe3VNk1tczA==
+"@swc/jest@^0.2.18":
+  version "0.2.18"
+  resolved "https://registry.yarnpkg.com/@swc/jest/-/jest-0.2.18.tgz#f2bf6cbce2c31d0edc2183a60b92dbb0fdb70823"
+  integrity sha512-hLoT+T4/ou7sizpFpbpPzHRIAMlbP+5orw3CpePfZQ+Vn7Q6Mx2m7PY/zU2s7Nzh5QnqzLLnOPeeMtqQurydbg==
   dependencies:
     "@jest/create-cache-key-function" "^27.4.2"
 
