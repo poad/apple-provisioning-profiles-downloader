@@ -85,8 +85,11 @@ export const ProvisioningProfileDownloader = async () => {
             include.attributes.profileType === profileType)
             .map(include => include);
         if (profiles.findIndex(profile => profile.attributes.uuid !== undefined &&
-            profile.attributes.profileContent)) {
-            throw new Error('Profile attributes `uuid` and `profileContent` must be defined!');
+            profile.attributes.profileContent !== undefined)) {
+            const attr = Object.keys(profiles.find(profile => profile.attributes.uuid === undefined ||
+                profile.attributes.profileContent === undefined)?.attributes)
+                .reduce((acc, cur) => `${acc}, ${cur}`);
+            throw new Error(`Profile attributes \`uuid\` and \`profileContent\` must be defined! ${attr}`);
         }
         const basePath = path.join(process.env.HOME ? process.env.HOME : '', '/Library/MobileDevice/Provisioning Profiles');
         await io.mkdirP(basePath);

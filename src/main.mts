@@ -115,11 +115,17 @@ export const ProvisioningProfileDownloader = async (): Promise<void> => {
       profiles.findIndex(
         profile =>
           profile.attributes.uuid !== undefined &&
-          profile.attributes.profileContent
+          profile.attributes.profileContent !== undefined
       )
     ) {
+      const attr = Object.keys(profiles.find(
+        profile =>
+          profile.attributes.uuid === undefined ||
+          profile.attributes.profileContent === undefined
+      )?.attributes!)
+      .reduce((acc, cur) => `${acc}, ${cur}`)
       throw new Error(
-        'Profile attributes `uuid` and `profileContent` must be defined!'
+        `Profile attributes \`uuid\` and \`profileContent\` must be defined! ${attr}`
       );
     }
     const basePath = path.join(
