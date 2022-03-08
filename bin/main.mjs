@@ -84,10 +84,10 @@ export const ProvisioningProfileDownloader = async () => {
             include.attributes.profileState === 'ACTIVE' &&
             include.attributes.profileType === profileType)
             .map(include => include);
-        if (profiles.findIndex(profile => profile.attributes.uuid !== undefined &&
-            profile.attributes.profileContent !== undefined)) {
-            const attr = Object.keys(profiles.find(profile => profile.attributes.uuid === undefined ||
-                profile.attributes.profileContent === undefined)?.attributes)
+        const invalidProfile = profiles.find(profile => profile.attributes.uuid === undefined ||
+            profile.attributes.profileContent === undefined);
+        if (invalidProfile) {
+            const attr = Object.keys(invalidProfile)
                 .reduce((acc, cur) => `${acc}, ${cur}`);
             throw new Error(`Profile attributes \`uuid\` and \`profileContent\` must be defined! ${attr}`);
         }
