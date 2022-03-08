@@ -38,10 +38,10 @@
   "dependencies": {
     "@actions/core": "^1.6.0",
     "@actions/io": "^1.1.1",
-    "appstore-connect-jwt-generator-core": "^1.1.6",
+    "appstore-connect-jwt-generator-core": "^1.1.7",
     "esm": "^3.2.25",
     "jsonwebtoken": "^8.5.1",
-    "node-fetch": "^3.2.1"
+    "node-fetch": "^3.2.2"
   },
   "devDependencies": {
     "@swc/cli": "^0.1.55",
