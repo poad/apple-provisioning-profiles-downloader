@@ -41,7 +41,7 @@
     "appstore-connect-jwt-generator-core": "^1.1.6",
     "esm": "^3.2.25",
     "jsonwebtoken": "^8.5.1",
-    "node-fetch": "^3.2.1"
+    "node-fetch": "^3.2.2"
   },
   "devDependencies": {
     "@swc/cli": "^0.1.55",
