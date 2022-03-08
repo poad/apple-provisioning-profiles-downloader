@@ -4,8 +4,6 @@
 [![PRs welcome!](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 [![version](https://img.shields.io/github/v/release/poad/apple-provisioning-profiles-downloader?display_name=tag&include_prereleases&sort=semver)](VERSION)
 
-I am referring to [Apple-Actions/apple-provisioning-profiles-downloader](https://github.com/Apple-Actions/apple-provisioning-profiles-downloader).
-
 ## Usage
 
 ### API Private Key from GitHub Secrets
@@ -17,7 +15,7 @@ jobs:
     steps:
     - name: 'Download Provisioning Profiles'
       id: provisioning
-      uses: poad/apple-provisioning-profiles-downloader@v1.0.2
+      uses: poad/apple-provisioning-profiles-downloader@v1.0.4
       with: 
         bundle-id: 'com.example.App'
         profile-type: 'IOS_APP_STORE'
@@ -38,7 +36,7 @@ jobs:
     steps:
     - name: 'Download Provisioning Profiles'
       id: provisioning
-      uses: poad/apple-provisioning-profiles-downloader@v1.0.2
+      uses: poad/apple-provisioning-profiles-downloader@v1.0.4
       with: 
         bundle-id: 'com.example.App'
         profile-type: 'IOS_APP_STORE'
