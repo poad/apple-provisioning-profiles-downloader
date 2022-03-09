@@ -2,8 +2,8 @@ import * as core from '@actions/core';
 import * as fs from 'fs';
 import * as io from '@actions/io';
 import Client from './client.mjs';
-import {Profile} from './@types';
-import {fileURLToPath} from 'url';
+import { Profile } from './@types';
+import { fileURLToPath } from 'url';
 import path from 'path';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -111,16 +111,15 @@ export const ProvisioningProfileDownloader = async (): Promise<void> => {
       )
       .map(include => include as Profile);
 
-    const invalidProfile = profiles.find(
-      profile =>
-        profile.attributes.uuid === undefined ||
-        profile.attributes.profileContent === undefined
-    );
-    if (invalidProfile) {
-      const attr = Object.keys(invalidProfile)
-        .reduce((acc, cur) => `${acc}, ${cur}`);
+    if (
+      profiles.findIndex(
+        profile =>
+          profile.attributes.uuid !== undefined &&
+          profile.attributes.profileContent
+      )
+    ) {
       throw new Error(
-        `Profile attributes \`uuid\` and \`profileContent\` must be defined! ${attr}`
+        'Profile attributes `uuid` and `profileContent` must be defined!'
       );
     }
     const basePath = path.join(
@@ -146,8 +145,7 @@ export const ProvisioningProfileDownloader = async (): Promise<void> => {
         const buffer = Buffer.from((await output).content, 'base64');
         fs.writeFileSync((await output).fullPath, buffer);
         core.info(
-          `Wrote ${(await output).profileType} profile '${
-            (await output).name
+          `Wrote ${(await output).profileType} profile '${(await output).name
           }' to '${(await output).fullPath}'.`
         );
       });
