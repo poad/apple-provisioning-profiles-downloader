@@ -65,6 +65,7 @@ jobs:
 
       - name: case file
         uses: ./
+        id: case-file
         with:
           bundle-id: 'com.github.poad.*'
           profile-type: 'IOS_APP_ADHOC'
@@ -72,8 +73,12 @@ jobs:
           api-key-id: ${{ secrets.APPSTORE_KEY_ID }}
           api-private-key-file: ${{ env.API_PRIVATE_KEY_FILE }}
 
+      - name: debug
+        run: echo ${{ steps.case-file.outputs.profiles }}
+
       - name: case for duration
         uses: ./
+        id: case-duration
         with:
           bundle-id: 'com.github.poad.*'
           profile-type: 'IOS_APP_ADHOC'
@@ -81,6 +86,9 @@ jobs:
           api-key-id: ${{ secrets.APPSTORE_KEY_ID }}
           api-private-key: ${{ secrets.API_PRIVATE_KEY }}
           token-duration: 600
+
+      - name: debug
+        run: echo ${{ steps.case-duration.outputs.profiles }}
 
   configure:
     runs-on: ubuntu-latest
