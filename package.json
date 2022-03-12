@@ -4,7 +4,7 @@
   "private": true,
   "main": "bin/main.mjs",
   "scripts": {
-    "build": "yarn clean && yarn types && yarn tsc",
+    "build": "yarn types && yarn tsc",
     "types": "tsc -p tsconfig-types.json",
     "tsc": "tsc",
     "format": "prettier --write **/*.ts",
@@ -13,9 +13,8 @@
     "package": "ncc build --source-map --license licenses.txt -o bin",
     "test": "NODE_OPTIONS=--experimental-vm-modules jest --coverage",
     "dev": "ts-node src/main.ts",
-    "clean": "rimraf bin && git clean -Xdf -e '!/.idea/**' -e '!/node_modules' -e '!/node_modules/**'",
-    "clean:dry": "git clean -Xdfn -e '!/.idea/**' -e '!/node_modules' -e '!/node_modules/**'",
-    "all": "yarn build && yarn format && yarn lint && yarn package && yarn test"
+    "clean": "rimraf bin",
+    "all": "yarn clean && yarn build && yarn format && yarn lint && yarn package && yarn test"
   },
   "exports": {
     ".": {
