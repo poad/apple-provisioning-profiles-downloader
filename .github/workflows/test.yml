@@ -32,7 +32,7 @@ jobs:
       - run: yarn install
       - name: build
         if: github.actor == 'dependabot[bot]'
-        run: rm -rf bin && yarn install && yarn build && yarn format && yarn lint && yarn package
+        run: rm -rf bin node_modules && yarn install && yarn build && yarn format && yarn lint && yarn package
       - name: unit test
         if: github.actor != 'dependabot[bot]'
         env:
@@ -41,7 +41,7 @@ jobs:
           ISSUER_ID: ${{ secrets.APPSTORE_ISSUER_ID }}
           API_KEY_ID: ${{ secrets.APPSTORE_KEY_ID }}
           API_PRIVATE_KEY: ${{ secrets.API_PRIVATE_KEY }}
-        run: rm -rf bin && yarn install && yarn build && yarn format && yarn lint && yarn package && yarn test
+        run: rm -rf bin node_modules && yarn install && yarn build && yarn format && yarn lint && yarn package && yarn test
 
   test:
     runs-on: macos-11
