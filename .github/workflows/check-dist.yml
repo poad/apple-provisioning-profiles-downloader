@@ -27,7 +27,7 @@ jobs:
         run: yarn install
 
       - name: Rebuild the bin/ directory
-        run: rm -rf dist && yarn build && yarn package
+        run: rm -rf bin && yarn build && yarn package
 
       - name: Compare the expected and actual bin/ directories
         run: |
