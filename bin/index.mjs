@@ -11541,6 +11541,9 @@ class BlobDataItem {
     this.#start = options.start
     this.size = options.size
     this.lastModified = options.lastModified
+    this.originalSize = options.originalSize === undefined
+      ? options.size
+      : options.originalSize
   }
 
   /**
@@ -11551,16 +11554,19 @@ class BlobDataItem {
     return new BlobDataItem({
       path: this.#path,
       lastModified: this.lastModified,
+      originalSize: this.originalSize,
       size: end - start,
       start: this.#start + start
     })
   }
 
   async * stream () {
-    const { mtimeMs } = await stat(this.#path)
-    if (mtimeMs > this.lastModified) {
+    const { mtimeMs, size } = await stat(this.#path)
+
+    if (mtimeMs > this.lastModified || this.originalSize !== size) {
       throw new DOMException('The requested file could not be read, typically due to permission problems that have occurred after a reference to a file was acquired.', 'NotReadableError')
     }
+
     yield * createReadStream(this.#path, {
       start: this.#start,
       end: this.#start + this.size - 1
@@ -11671,8 +11677,12 @@ const _Blob = class Blob {
         part = encoder.encode(`${element}`)
       }
 
-      this.#size += ArrayBuffer.isView(part) ? part.byteLength : part.size
-      this.#parts.push(part)
+      const size = ArrayBuffer.isView(part) ? part.byteLength : part.size
+      // Avoid pushing empty parts into the array to better GC them
+      if (size) {
+        this.#size += size
+        this.#parts.push(part)
+      }
     }
 
     this.#endings = `${options.endings === undefined ? 'transparent' : options.endings}`
