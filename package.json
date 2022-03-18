@@ -36,7 +36,7 @@
   "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.6.0",
-    "@actions/io": "^1.1.1",
+    "@actions/io": "^1.1.2",
     "appstore-connect-jwt-generator-core": "^1.1.7",
     "esm": "^3.2.25",
     "jsonwebtoken": "^8.5.1",
