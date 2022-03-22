@@ -1,6 +1,8 @@
 name: 'build-test'
 on: # rebuild any PRs and main branch changes
-  pull_request:
+  pull_request_target:
+    branches:
+      - main
   push:
     branches:
       - main
@@ -29,6 +31,15 @@ jobs:
           check-latest: true
           cache: yarn
 
+      - name: Import iOS CodeSign Certificates
+        if: github.actor != 'dependabot[bot]'
+        uses: Apple-Actions/import-codesign-certs@v1
+        with:
+          create-keychain: true
+          keychain-password: ${{ steps.develop-certificate.outputs.keychain-password }}
+          p12-file-base64: ${{ secrets.DISTRIBUTION_CERTIFICATES_FILE_BASE64 }}
+          p12-password: ${{ secrets.CERTIFICATES_PASSWORD }}
+
       - run: yarn install
       - name: build
         if: github.actor == 'dependabot[bot]'
@@ -52,8 +63,8 @@ jobs:
       - name: case on memory
         uses: ./
         with:
-          bundle-id: 'com.github.poad.*'
-          profile-type: 'IOS_APP_ADHOC'
+          bundle-id: 'com.github.poad.example.reactjs.native.ReactNativeAppSample'
+          profile-type: IOS_APP_STORE
           issuer-id: ${{ secrets.APPSTORE_ISSUER_ID }}
           api-key-id: ${{ secrets.APPSTORE_KEY_ID }}
           api-private-key: ${{ secrets.API_PRIVATE_KEY }}
@@ -67,28 +78,32 @@ jobs:
         uses: ./
         id: case-file
         with:
-          bundle-id: 'com.github.poad.*'
-          profile-type: 'IOS_APP_ADHOC'
+          bundle-id: 'com.github.poad.example.reactjs.native.ReactNativeAppSample'
+          profile-type: IOS_APP_STORE
           issuer-id: ${{ secrets.APPSTORE_ISSUER_ID }}
           api-key-id: ${{ secrets.APPSTORE_KEY_ID }}
           api-private-key-file: ${{ env.API_PRIVATE_KEY_FILE }}
 
       - name: debug
-        run: echo ${{ steps.case-file.outputs.profiles }}
+        env:
+          PROFILES: ${{ steps.case-file.outputs.profiles }}
+        run: echo ${PROFILES}
 
       - name: case for duration
         uses: ./
         id: case-duration
         with:
-          bundle-id: 'com.github.poad.*'
-          profile-type: 'IOS_APP_ADHOC'
+          bundle-id: 'com.github.poad.example.reactjs.native.ReactNativeAppSample'
+          profile-type: IOS_APP_STORE
           issuer-id: ${{ secrets.APPSTORE_ISSUER_ID }}
           api-key-id: ${{ secrets.APPSTORE_KEY_ID }}
           api-private-key: ${{ secrets.API_PRIVATE_KEY }}
           token-duration: 600
 
       - name: debug
-        run: echo ${{ steps.case-duration.outputs.profiles }}
+        env:
+          PROFILES: ${{ steps.case-duration.outputs.profiles }}
+        run: echo ${PROFILES}
 
   configure:
     runs-on: ubuntu-latest
