@@ -2,7 +2,7 @@ import * as process from 'process';
 import fs from 'fs';
 import jwt from 'jsonwebtoken';
 import os from 'os';
-// eslint-disable-next-line sort-imports
+
 import {expect, test} from '@jest/globals';
 import Client from '../bin/client.mjs';
 
