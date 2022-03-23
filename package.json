@@ -44,7 +44,7 @@
   },
   "devDependencies": {
     "@swc/cli": "^0.1.56",
-    "@swc/core": "^1.2.159",
+    "@swc/core": "^1.2.160",
     "@swc/helpers": "^0.3.8",
     "@swc/jest": "^0.2.20",
     "@types/jest": "^27.4.1",
@@ -54,7 +54,7 @@
     "@vercel/ncc": "^0.33.3",
     "babel-jest": "^27.5.1",
     "eslint": "^8.11.0",
-    "eslint-plugin-github": "^4.3.5",
+    "eslint-plugin-github": "^4.3.6",
     "eslint-plugin-jest": "^26.1.2",
     "eslint-plugin-prettier": "^4.0.0",
     "jest": "^27.5.1",
