@@ -2,7 +2,7 @@
   "name": "download-provisioning-profiles",
   "version": "1.0.4",
   "private": true,
-  "main": "bin/index.mjs",
+  "main": "bin/main.mjs",
   "scripts": {
     "build": "yarn types && yarn tsc",
     "types": "tsc -p tsconfig-types.json",
