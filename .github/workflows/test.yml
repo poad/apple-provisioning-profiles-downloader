@@ -69,6 +69,11 @@ jobs:
           api-key-id: ${{ secrets.APPSTORE_KEY_ID }}
           api-private-key: ${{ secrets.API_PRIVATE_KEY }}
 
+      - name: debug
+        env:
+          PROFILES: ${{ steps.case-duration.outputs.profiles }}
+        run: echo ${PROFILES}
+
       - name: prepare case file
         run: |
           echo "${{ secrets.API_PRIVATE_KEY }}" > $(pwd)/private-key.p8
