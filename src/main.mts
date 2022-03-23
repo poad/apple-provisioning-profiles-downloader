@@ -128,6 +128,13 @@ export const ProvisioningProfileDownloader = async (): Promise<void> => {
     );
     await io.mkdirP(basePath);
 
+    core.info(`${profiles.length} profiles found.`)
+
+    if (core.isDebug()) {
+      const profileFilenames = profiles.map(profile => `${profile.attributes.uuid}.mobileprovision`);
+      profileFilenames.forEach(profileFilename => core.debug(profileFilename));
+    }
+
     /* eslint-disable github/array-foreach */
     profiles
       .map(async profile => {
@@ -151,18 +158,16 @@ export const ProvisioningProfileDownloader = async (): Promise<void> => {
       });
     /* eslint-enable github/array-foreach */
 
-    core.setOutput(
-      'profiles',
-      JSON.stringify(
-        profiles.map(value => {
-          return {
-            name: value.attributes.name,
-            udid: value.attributes.uuid,
-            type: value.attributes.profileType?.toString()
-          };
-        })
-      )
+    const output = JSON.stringify(
+      profiles.map(value => {
+        return {
+          name: value.attributes.name,
+          udid: value.attributes.uuid,
+          type: value.attributes.profileType?.toString()
+        };
+      })
     );
+    core.setOutput('profiles', output);
   } catch (error: unknown) {
     if (error instanceof Error) {
       core.error(error);

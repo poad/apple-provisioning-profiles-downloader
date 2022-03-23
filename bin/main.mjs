@@ -90,6 +90,11 @@ export const ProvisioningProfileDownloader = async () => {
         }
         const basePath = path.join(process.env.HOME ? process.env.HOME : '', '/Library/MobileDevice/Provisioning Profiles');
         await io.mkdirP(basePath);
+        core.info(`${profiles.length} profiles found.`);
+        if (core.isDebug()) {
+            const profileFilenames = profiles.map(profile => `${profile.attributes.uuid}.mobileprovision`);
+            profileFilenames.forEach(profileFilename => core.debug(profileFilename));
+        }
         /* eslint-disable github/array-foreach */
         profiles
             .map(async (profile) => {
@@ -109,13 +114,14 @@ export const ProvisioningProfileDownloader = async () => {
             core.info(`Wrote ${(await output).profileType} profile '${(await output).name}' to '${(await output).fullPath}'.`);
         });
         /* eslint-enable github/array-foreach */
-        core.setOutput('profiles', JSON.stringify(profiles.map(value => {
+        const output = JSON.stringify(profiles.map(value => {
             return {
                 name: value.attributes.name,
                 udid: value.attributes.uuid,
                 type: value.attributes.profileType?.toString()
             };
-        })));
+        }));
+        core.setOutput('profiles', output);
     }
     catch (error) {
         if (error instanceof Error) {
