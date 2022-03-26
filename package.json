@@ -85,7 +85,7 @@
       "**/__tests__/*.test.mts"
     ],
     "transform": {
-      "^.+\\.(t|j)sx?$": [
+      "^.+\\.m?(t|j)sx?$": [
         "@swc/jest",
         {
           "jsc": {
