@@ -128,15 +128,15 @@ export const ProvisioningProfileDownloader = async (): Promise<void> => {
     );
     await io.mkdirP(basePath);
 
-    core.info(`${profiles.length} profiles found.`)
+    core.info(`${profiles.length} profiles found.`);
 
     if (core.isDebug()) {
-      const profileFilenames = profiles.map(profile => `${profile.attributes.uuid}.mobileprovision`);
-      profileFilenames.forEach(profileFilename => core.debug(profileFilename));
+      profiles
+        .map(profile => `${profile.attributes.uuid}.mobileprovision`)
+        .forEach(profileFilename => core.debug(profileFilename));
     }
 
-    /* eslint-disable github/array-foreach */
-    profiles
+    const  outputs = await profiles
       .map(async profile => {
         const profileFilename = `${profile.attributes.uuid}.mobileprovision`;
         return {
@@ -147,7 +147,8 @@ export const ProvisioningProfileDownloader = async (): Promise<void> => {
             ? profile.attributes.profileContent
             : ''
         };
-      })
+      });
+    await outputs
       .forEach(async output => {
         const buffer = Buffer.from((await output).content, 'base64');
         fs.writeFileSync((await output).fullPath, buffer);
@@ -156,7 +157,6 @@ export const ProvisioningProfileDownloader = async (): Promise<void> => {
           }' to '${(await output).fullPath}'.`
         );
       });
-    /* eslint-enable github/array-foreach */
 
     const output = JSON.stringify(
       profiles.map(value => {

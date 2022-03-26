@@ -4,13 +4,17 @@ import * as process from 'process';
 import {fileURLToPath} from 'url';
 import fs from 'fs';
 import os from 'os';
-import {test} from '@jest/globals';
+import {expect, test} from '@jest/globals';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-test('test runs', () => {
-  const tmp = fs.mkdtempSync(`${os.tmpdir()}/`, {encoding: 'utf8'});
+test('test runs', async () => {
+  const baseDirPath = `${os.tmpdir()}/main/`;
+  if (!fs.existsSync(baseDirPath)) {
+    fs.mkdirSync(baseDirPath, { recursive: true });
+  }
+  const tmp = fs.mkdtempSync(`${baseDirPath}/`, { encoding: 'utf8' });
 
   process.env['HOME'] = tmp;
   process.env['INPUT_BUNDLE-ID'] = process.env.BUNDLE_ID;
@@ -26,13 +30,20 @@ test('test runs', () => {
   const options: cp.ExecFileSyncOptions = {
     env: process.env
   };
-  cp.execFileSync(np, [ip], options).toString();
+  const ret = cp.execFileSync(np, [ip], options).toString();
   // eslint-disable-next-line no-console
-  console.log(cp.execFileSync(np, [ip], options).toString());
+  console.log(ret);
+
+  const profiles = fs.readdirSync(tmp);
+  expect(profiles.length).toBeGreaterThan(0);
 });
 
 test('test runs by file', () => {
-  const tmp = fs.mkdtempSync(`${os.tmpdir()}/`, {encoding: 'utf8'});
+  const baseDirPath = `${os.tmpdir()}/main/`;
+  if (!fs.existsSync(baseDirPath)) {
+    fs.mkdirSync(baseDirPath, { recursive: true });
+  }
+  const tmp = fs.mkdtempSync(`${baseDirPath}/`, { encoding: 'utf8' });
 
   process.env['HOME'] = tmp;
   process.env['INPUT_BUNDLE-ID'] = process.env.BUNDLE_ID;
@@ -48,13 +59,20 @@ test('test runs by file', () => {
   const options: cp.ExecFileSyncOptions = {
     env: process.env
   };
-  cp.execFileSync(np, [ip], options).toString();
+  const ret = cp.execFileSync(np, [ip], options).toString();
   // eslint-disable-next-line no-console
-  console.log(cp.execFileSync(np, [ip], options).toString());
+  console.log(ret);
+
+  const profiles = fs.readdirSync(tmp);
+  expect(profiles.length).toBeGreaterThan(0);
 });
 
 test('test runs with duration', () => {
-  const tmp = fs.mkdtempSync(`${os.tmpdir()}/`, {encoding: 'utf8'});
+  const baseDirPath = `${os.tmpdir()}/main/`;
+  if (!fs.existsSync(baseDirPath)) {
+    fs.mkdirSync(baseDirPath, { recursive: true });
+  }
+  const tmp = fs.mkdtempSync(`${baseDirPath}/`, { encoding: 'utf8' });
 
   process.env['HOME'] = tmp;
   process.env['INPUT_BUNDLE-ID'] = process.env.BUNDLE_ID;
@@ -71,7 +89,10 @@ test('test runs with duration', () => {
   const options: cp.ExecFileSyncOptions = {
     env: process.env
   };
-  cp.execFileSync(np, [ip], options).toString();
+  const ret = cp.execFileSync(np, [ip], options).toString();
   // eslint-disable-next-line no-console
-  console.log(cp.execFileSync(np, [ip], options).toString());
+  console.log(ret);
+
+  const profiles = fs.readdirSync(tmp);
+  expect(profiles.length).toBeGreaterThan(0);
 });

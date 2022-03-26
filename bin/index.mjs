@@ -14243,7 +14243,7 @@ var external_path_ = __nccwpck_require__(1017);
 
 
 
-const main_filename = (0,external_url_namespaceObject.fileURLToPath)("file:///home/runner/work/apple-provisioning-profiles-downloader/apple-provisioning-profiles-downloader/bin/main.mjs");
+const main_filename = (0,external_url_namespaceObject.fileURLToPath)("file:///Users/ken-yo/git/poad/apple-provisioning-profiles-downloader/bin/main.mjs");
 const main_dirname = external_path_.dirname(main_filename);
 const ProvisioningProfileDownloader = async () => {
     try {
@@ -14331,11 +14331,12 @@ const ProvisioningProfileDownloader = async () => {
         await io.mkdirP(basePath);
         core.info(`${profiles.length} profiles found.`);
         if (core.isDebug()) {
-            const profileFilenames = profiles.map(profile => `${profile.attributes.uuid}.mobileprovision`);
-            profileFilenames.forEach(profileFilename => core.debug(profileFilename));
+            profiles
+                .map(profile => `${profile.attributes.uuid}.mobileprovision`)
+                .forEach(profileFilename => core.debug(profileFilename));
         }
         /* eslint-disable github/array-foreach */
-        profiles
+        const outputs = await profiles
             .map(async (profile) => {
             const profileFilename = `${profile.attributes.uuid}.mobileprovision`;
             return {
@@ -14346,8 +14347,8 @@ const ProvisioningProfileDownloader = async () => {
                     ? profile.attributes.profileContent
                     : ''
             };
-        })
-            .forEach(async (output) => {
+        });
+        await outputs.forEach(async (output) => {
             const buffer = Buffer.from((await output).content, 'base64');
             external_fs_.writeFileSync((await output).fullPath, buffer);
             core.info(`Wrote ${(await output).profileType} profile '${(await output).name}' to '${(await output).fullPath}'.`);

@@ -11,7 +11,7 @@
     "format-check": "prettier --check **/*.mts **/*.ts",
     "lint": "eslint **/*.ts",
     "package": "ncc build --source-map --license licenses.txt -o bin",
-    "test": "NODE_OPTIONS=--experimental-vm-modules jest --coverage",
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest --coverage --silent=false --verbose false",
     "dev": "ts-node src/main.mts",
     "clean": "rimraf bin",
     "all": "yarn clean && yarn build && yarn format && yarn lint && yarn package && yarn test"
@@ -37,8 +37,7 @@
   "dependencies": {
     "@actions/core": "^1.6.0",
     "@actions/io": "^1.1.2",
-    "appstore-connect-jwt-generator-core": "^1.1.7",
-    "esm": "^3.2.25",
+    "appstore-connect-jwt-generator-core": "*",
     "jsonwebtoken": "^8.5.1",
     "node-fetch": "^3.2.3"
   },

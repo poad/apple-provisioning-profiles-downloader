@@ -5,10 +5,15 @@ import os from 'os';
 
 import {expect, test} from '@jest/globals';
 import Client from '../bin/client.mjs';
+import {type BundleIdsResponse} from '../bin/@types';
 
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 test('token test', () => {
-  const tmp = fs.mkdtempSync(`${os.tmpdir()}/`, {encoding: 'utf8'});
+  const baseDirPath = `${os.tmpdir()}/client/`;
+  if (!fs.existsSync(baseDirPath)) {
+    fs.mkdirSync(baseDirPath, { recursive: true });
+  }
+  const tmp = fs.mkdtempSync(`${baseDirPath}/`, { encoding: 'utf8' });
 
   process.env['HOME'] = tmp;
   const apiKeyId = process.env.API_KEY_ID!;
@@ -32,7 +37,11 @@ test('token test', () => {
 });
 
 test('token test', async () => {
-  const tmp = fs.mkdtempSync(`${os.tmpdir()}/`, {encoding: 'utf8'});
+  const baseDirPath = `${os.tmpdir()}/client/`;
+  if (!fs.existsSync(baseDirPath)) {
+    fs.mkdirSync(baseDirPath, { recursive: true });
+  }
+  const tmp = fs.mkdtempSync(`${baseDirPath}/`, { encoding: 'utf8' });
 
   process.env['HOME'] = tmp;
   const bundleId = process.env.BUNDLE_ID!;
@@ -61,14 +70,18 @@ test('token test', async () => {
   const response = client.listBundleIds(query);
   expect(response).not.toBeUndefined();
   expect(response).not.toBeNull();
-  const data = (await response).data;
+  const data = ((await response) as BundleIdsResponse).data;
   expect(data).not.toBeUndefined();
   expect(data).not.toBeNull();
   expect(data.length).toBeGreaterThan(0);
 });
 
 test('token duration test', () => {
-  const tmp = fs.mkdtempSync(`${os.tmpdir()}/`, {encoding: 'utf8'});
+  const baseDirPath = `${os.tmpdir()}/client/`;
+  if (!fs.existsSync(baseDirPath)) {
+    fs.mkdirSync(baseDirPath, { recursive: true });
+  }
+  const tmp = fs.mkdtempSync(`${baseDirPath}/`, { encoding: 'utf8' });
 
   process.env['HOME'] = tmp;
   const apiKeyId = process.env.API_KEY_ID!;
