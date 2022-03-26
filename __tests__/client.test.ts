@@ -5,7 +5,7 @@ import os from 'os';
 import path from 'path';
 
 import {expect, test} from '@jest/globals';
-import Client from '../lib/client.mjs';
+import Client from '../lib/client.cjs';
 import {type BundleIdsResponse} from '../lib/@types';
 
 /* eslint-disable @typescript-eslint/no-non-null-assertion */

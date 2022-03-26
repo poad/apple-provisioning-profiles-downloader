@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "ESNext",
     "lib": ["ESNext"],
-    "module": "esnext",
+    "module": "commonjs",
     "outDir": "./lib",
     "rootDir": "./src",
     "strict": true,
@@ -14,8 +14,8 @@
     "allowJs": true
   },
   "files": [
-    "src/main.mts",
-    "src/client.mts"
+    "src/main.cts",
+    "src/client.cts"
   ],
   "exclude": ["node_modules", "**/*.test.ts", "lib", "src/@types/*.ts"]
 }

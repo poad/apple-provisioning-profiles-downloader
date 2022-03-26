@@ -1,13 +1,9 @@
 import * as cp from 'child_process';
 import * as path from 'path';
 import * as process from 'process';
-import {fileURLToPath} from 'url';
 import fs from 'fs';
 import os from 'os';
 import {expect, test} from '@jest/globals';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 test('test runs', async () => {
   const baseDirPath = path.join(os.tmpdir(), 'main');
@@ -26,7 +22,7 @@ test('test runs', async () => {
   process.env['ACTIONS_STEP_DEBUG'] = 'true';
 
   const np = process.execPath;
-  const ip = path.join(__dirname, '..', 'dist', 'index.mjs');
+  const ip = path.join(__dirname, '..', 'dist', 'index.cjs');
   const options: cp.ExecFileSyncOptions = {
     env: process.env
   };
@@ -55,7 +51,7 @@ test('test runs by file', () => {
   process.env['ACTIONS_STEP_DEBUG'] = 'true';
 
   const np = process.execPath;
-  const ip = path.join(__dirname, '..', 'dist', 'index.mjs');
+  const ip = path.join(__dirname, '..', 'dist', 'index.cjs');
   const options: cp.ExecFileSyncOptions = {
     env: process.env
   };
@@ -85,7 +81,7 @@ test('test runs with duration', () => {
   process.env['ACTIONS_STEP_DEBUG'] = 'true';
 
   const np = process.execPath;
-  const ip = path.join(__dirname, '..', 'dist', 'index.mjs');
+  const ip = path.join(__dirname, '..', 'dist', 'index.cjs');
   const options: cp.ExecFileSyncOptions = {
     env: process.env
   };
