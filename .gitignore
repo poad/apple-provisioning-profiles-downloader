@@ -108,3 +108,4 @@ lib/**/*.map
 !node_modules/streamroller
 !node_modules/tunnel
 !node_modules/universalify
+test

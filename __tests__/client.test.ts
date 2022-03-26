@@ -2,6 +2,7 @@ import * as process from 'process';
 import fs from 'fs';
 import jwt from 'jsonwebtoken';
 import os from 'os';
+import path from 'path';
 
 import {expect, test} from '@jest/globals';
 import Client from '../bin/client.mjs';
@@ -9,11 +10,11 @@ import {type BundleIdsResponse} from '../bin/@types';
 
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 test('token test', () => {
-  const baseDirPath = `${os.tmpdir()}/client/`;
+  const baseDirPath = path.join(process.cwd(), 'test', 'client');
   if (!fs.existsSync(baseDirPath)) {
     fs.mkdirSync(baseDirPath, { recursive: true });
   }
-  const tmp = fs.mkdtempSync(`${baseDirPath}/`, { encoding: 'utf8' });
+  const tmp = fs.mkdtempSync(baseDirPath, { encoding: 'utf8' });
 
   process.env['HOME'] = tmp;
   const apiKeyId = process.env.API_KEY_ID!;
@@ -74,6 +75,8 @@ test('token test', async () => {
   expect(data).not.toBeUndefined();
   expect(data).not.toBeNull();
   expect(data.length).toBeGreaterThan(0);
+
+  data.forEach(bundleId => console.log(bundleId.attributes.identifier));
 });
 
 test('token duration test', () => {

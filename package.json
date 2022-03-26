@@ -10,7 +10,7 @@
     "format": "prettier --write **/*.mts **/*.ts",
     "format-check": "prettier --check **/*.mts **/*.ts",
     "lint": "eslint **/*.ts",
-    "package": "ncc build --source-map --license licenses.txt -o bin",
+    "package": "ncc build --source-map --license licenses.txt -m -q --target 2021 -o bin",
     "test": "NODE_OPTIONS=--experimental-vm-modules jest --coverage --silent=false --verbose false",
     "dev": "ts-node src/main.mts",
     "clean": "rimraf bin",
