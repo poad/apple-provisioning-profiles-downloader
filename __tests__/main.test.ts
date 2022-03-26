@@ -10,7 +10,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 test('test runs', async () => {
-  const baseDirPath = `${os.tmpdir()}/main/`;
+  const baseDirPath = path.join(os.tmpdir(), 'main');
   if (!fs.existsSync(baseDirPath)) {
     fs.mkdirSync(baseDirPath, { recursive: true });
   }
@@ -26,7 +26,7 @@ test('test runs', async () => {
   process.env['ACTIONS_STEP_DEBUG'] = 'true';
 
   const np = process.execPath;
-  const ip = path.join(__dirname, '..', 'bin', 'main.mjs');
+  const ip = path.join(__dirname, '..', 'dist', 'index.mjs');
   const options: cp.ExecFileSyncOptions = {
     env: process.env
   };
@@ -39,7 +39,7 @@ test('test runs', async () => {
 });
 
 test('test runs by file', () => {
-  const baseDirPath = `${os.tmpdir()}/main/`;
+  const baseDirPath = path.join(os.tmpdir(), 'main');
   if (!fs.existsSync(baseDirPath)) {
     fs.mkdirSync(baseDirPath, { recursive: true });
   }
@@ -55,7 +55,7 @@ test('test runs by file', () => {
   process.env['ACTIONS_STEP_DEBUG'] = 'true';
 
   const np = process.execPath;
-  const ip = path.join(__dirname, '..', 'bin', 'main.mjs');
+  const ip = path.join(__dirname, '..', 'dist', 'index.mjs');
   const options: cp.ExecFileSyncOptions = {
     env: process.env
   };
@@ -68,7 +68,7 @@ test('test runs by file', () => {
 });
 
 test('test runs with duration', () => {
-  const baseDirPath = `${os.tmpdir()}/main/`;
+  const baseDirPath = path.join(os.tmpdir(), 'main');
   if (!fs.existsSync(baseDirPath)) {
     fs.mkdirSync(baseDirPath, { recursive: true });
   }
@@ -85,7 +85,7 @@ test('test runs with duration', () => {
   process.env['ACTIONS_STEP_DEBUG'] = 'true';
 
   const np = process.execPath;
-  const ip = path.join(__dirname, '..', 'bin', 'main.mjs');
+  const ip = path.join(__dirname, '..', 'dist', 'index.mjs');
   const options: cp.ExecFileSyncOptions = {
     env: process.env
   };

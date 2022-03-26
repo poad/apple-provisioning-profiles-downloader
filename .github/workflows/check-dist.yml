@@ -26,12 +26,12 @@ jobs:
       - name: Install dependencies
         run: yarn install
 
-      - name: Rebuild the bin/ directory
-        run: rm -rf bin && yarn build && yarn package
+      - name: Rebuild the dist/ directory
+        run: rm -rf dist && yarn build && yarn package
 
-      - name: Compare the expected and actual bin/ directories
+      - name: Compare the expected and actual dist/ directories
         run: |
-          if [ "$(git diff --ignore-space-at-eol bin/ | wc -l)" -gt "0" ]; then
+          if [ "$(git diff --ignore-space-at-eol dist/ | wc -l)" -gt "0" ]; then
             echo "Detected uncommitted changes after build.  See status below:"
             git diff
             exit 1
@@ -42,5 +42,5 @@ jobs:
       - uses: actions/upload-artifact@v2
         if: ${{ failure() && steps.diff.conclusion == 'failure' }}
         with:
-          name: bin
-          path: bin/
+          name: dist
+          path: dist/

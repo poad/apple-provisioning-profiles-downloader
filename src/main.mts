@@ -1,3 +1,4 @@
+import 'source-map-support/register';
 import * as core from '@actions/core';
 import * as fs from 'fs';
 import * as io from '@actions/io';

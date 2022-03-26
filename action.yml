@@ -28,7 +28,7 @@ outputs:
     description: 'A JSON string containing an array of objects with the `name`, `udid`, and `type` of the provisioning profiles downloaded.'
 runs:
   using: 'node16'
-  main: 'bin/index.mjs'
+  main: 'dist/index.mjs'
 branding:
   icon: arrow-down-circle
   color: green

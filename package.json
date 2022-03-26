@@ -2,7 +2,7 @@
   "name": "download-provisioning-profiles",
   "version": "1.0.4",
   "private": true,
-  "main": "bin/main.mjs",
+  "main": "lib/main.mjs",
   "scripts": {
     "build": "yarn types && yarn tsc",
     "types": "tsc -p tsconfig-types.json",
@@ -10,15 +10,15 @@
     "format": "prettier --write **/*.mts **/*.ts",
     "format-check": "prettier --check **/*.mts **/*.ts",
     "lint": "eslint **/*.ts",
-    "package": "ncc build --source-map --license licenses.txt -m -q --target 2021 -o bin",
+    "package": "ncc build --source-map --license licenses.txt -m -q --target es2021",
     "test": "NODE_OPTIONS=--experimental-vm-modules jest --coverage --silent=false --verbose false",
     "dev": "ts-node src/main.mts",
-    "clean": "rimraf bin",
+    "clean": "rimraf lib",
     "all": "yarn clean && yarn build && yarn format && yarn lint && yarn package && yarn test"
   },
   "exports": {
     ".": {
-      "import": "./bin/main.mjs"
+      "import": "./lib/main.mjs"
     }
   },
   "repository": {
@@ -31,7 +31,7 @@
     "setup"
   ],
   "type": "module",
-  "types": "bin/@types/index.d.ts",
+  "types": "lib/@types/index.d.ts",
   "author": "Kenji Saito",
   "license": "MIT",
   "dependencies": {
@@ -39,7 +39,8 @@
     "@actions/io": "^1.1.2",
     "appstore-connect-jwt-generator-core": "*",
     "jsonwebtoken": "^8.5.1",
-    "node-fetch": "^3.2.3"
+    "node-fetch": "^3.2.3",
+    "source-map-support": "^0.5.21"
   },
   "devDependencies": {
     "@swc/cli": "^0.1.56",

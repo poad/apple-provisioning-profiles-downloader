@@ -5,12 +5,12 @@ import os from 'os';
 import path from 'path';
 
 import {expect, test} from '@jest/globals';
-import Client from '../bin/client.mjs';
-import {type BundleIdsResponse} from '../bin/@types';
+import Client from '../lib/client.mjs';
+import {type BundleIdsResponse} from '../lib/@types';
 
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 test('token test', () => {
-  const baseDirPath = path.join(process.cwd(), 'test', 'client');
+  const baseDirPath = path.join(os.tmpdir(), 'client');
   if (!fs.existsSync(baseDirPath)) {
     fs.mkdirSync(baseDirPath, { recursive: true });
   }
@@ -38,7 +38,7 @@ test('token test', () => {
 });
 
 test('token test', async () => {
-  const baseDirPath = `${os.tmpdir()}/client/`;
+  const baseDirPath = path.join(os.tmpdir(), 'client');
   if (!fs.existsSync(baseDirPath)) {
     fs.mkdirSync(baseDirPath, { recursive: true });
   }
@@ -68,19 +68,17 @@ test('token test', async () => {
       'bundleId,certificates,createdDate,devices,expirationDate,name,platform,profileContent,profileState,profileType,uuid'
   };
 
-  const response = client.listBundleIds(query);
+  const response = (await client.listBundleIds(query)) as BundleIdsResponse;
   expect(response).not.toBeUndefined();
   expect(response).not.toBeNull();
-  const data = ((await response) as BundleIdsResponse).data;
+  const data = response.data;
   expect(data).not.toBeUndefined();
   expect(data).not.toBeNull();
   expect(data.length).toBeGreaterThan(0);
-
-  data.forEach(bundleId => console.log(bundleId.attributes.identifier));
 });
 
 test('token duration test', () => {
-  const baseDirPath = `${os.tmpdir()}/client/`;
+  const baseDirPath = path.join(os.tmpdir(), 'client');
   if (!fs.existsSync(baseDirPath)) {
     fs.mkdirSync(baseDirPath, { recursive: true });
   }

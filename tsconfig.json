@@ -3,7 +3,7 @@
     "target": "ESNext",
     "lib": ["ESNext"],
     "module": "esnext",
-    "outDir": "./bin",
+    "outDir": "./lib",
     "rootDir": "./src",
     "strict": true,
     "noImplicitAny": true,
@@ -17,5 +17,5 @@
     "src/main.mts",
     "src/client.mts"
   ],
-  "exclude": ["node_modules", "**/*.test.ts", "bin", "src/@types/*.ts"]
+  "exclude": ["node_modules", "**/*.test.ts", "lib", "src/@types/*.ts"]
 }
