@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@swc/cli": "^0.1.56",
-    "@swc/core": "^1.2.162",
+    "@swc/core": "^1.2.163",
     "@swc/helpers": "^0.3.8",
     "@swc/jest": "^0.2.20",
     "@types/jest": "^27.4.1",
@@ -54,7 +54,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "jest": "^27.5.1",
     "js-yaml": "^4.1.0",
-    "prettier": "2.6.1",
+    "prettier": "2.6.2",
     "rimraf": "^3.0.2",
     "swc-loader": "^0.1.15",
     "ts-node": "^10.7.0",
