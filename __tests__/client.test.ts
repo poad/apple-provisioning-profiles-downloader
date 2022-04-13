@@ -12,9 +12,9 @@ import {type BundleIdsResponse} from '../lib/@types';
 test('token test', () => {
   const baseDirPath = path.join(os.tmpdir(), 'client');
   if (!fs.existsSync(baseDirPath)) {
-    fs.mkdirSync(baseDirPath, { recursive: true });
+    fs.mkdirSync(baseDirPath, {recursive: true});
   }
-  const tmp = fs.mkdtempSync(baseDirPath, { encoding: 'utf8' });
+  const tmp = fs.mkdtempSync(baseDirPath, {encoding: 'utf8'});
 
   process.env['HOME'] = tmp;
   const apiKeyId = process.env.API_KEY_ID!;
@@ -40,9 +40,9 @@ test('token test', () => {
 test('token test', async () => {
   const baseDirPath = path.join(os.tmpdir(), 'client');
   if (!fs.existsSync(baseDirPath)) {
-    fs.mkdirSync(baseDirPath, { recursive: true });
+    fs.mkdirSync(baseDirPath, {recursive: true});
   }
-  const tmp = fs.mkdtempSync(`${baseDirPath}/`, { encoding: 'utf8' });
+  const tmp = fs.mkdtempSync(`${baseDirPath}/`, {encoding: 'utf8'});
 
   process.env['HOME'] = tmp;
   const bundleId = process.env.BUNDLE_ID!;
@@ -80,9 +80,9 @@ test('token test', async () => {
 test('token duration test', () => {
   const baseDirPath = path.join(os.tmpdir(), 'client');
   if (!fs.existsSync(baseDirPath)) {
-    fs.mkdirSync(baseDirPath, { recursive: true });
+    fs.mkdirSync(baseDirPath, {recursive: true});
   }
-  const tmp = fs.mkdtempSync(`${baseDirPath}/`, { encoding: 'utf8' });
+  const tmp = fs.mkdtempSync(`${baseDirPath}/`, {encoding: 'utf8'});
 
   process.env['HOME'] = tmp;
   const apiKeyId = process.env.API_KEY_ID!;

@@ -8,9 +8,9 @@ import {expect, test} from '@jest/globals';
 test('test runs', async () => {
   const baseDirPath = path.join(os.tmpdir(), 'main');
   if (!fs.existsSync(baseDirPath)) {
-    fs.mkdirSync(baseDirPath, { recursive: true });
+    fs.mkdirSync(baseDirPath, {recursive: true});
   }
-  const tmp = fs.mkdtempSync(`${baseDirPath}/`, { encoding: 'utf8' });
+  const tmp = fs.mkdtempSync(`${baseDirPath}/`, {encoding: 'utf8'});
 
   process.env['HOME'] = tmp;
   process.env['INPUT_BUNDLE-ID'] = process.env.BUNDLE_ID;
@@ -37,9 +37,9 @@ test('test runs', async () => {
 test('test runs by file', () => {
   const baseDirPath = path.join(os.tmpdir(), 'main');
   if (!fs.existsSync(baseDirPath)) {
-    fs.mkdirSync(baseDirPath, { recursive: true });
+    fs.mkdirSync(baseDirPath, {recursive: true});
   }
-  const tmp = fs.mkdtempSync(`${baseDirPath}/`, { encoding: 'utf8' });
+  const tmp = fs.mkdtempSync(`${baseDirPath}/`, {encoding: 'utf8'});
 
   process.env['HOME'] = tmp;
   process.env['INPUT_BUNDLE-ID'] = process.env.BUNDLE_ID;
@@ -66,9 +66,9 @@ test('test runs by file', () => {
 test('test runs with duration', () => {
   const baseDirPath = path.join(os.tmpdir(), 'main');
   if (!fs.existsSync(baseDirPath)) {
-    fs.mkdirSync(baseDirPath, { recursive: true });
+    fs.mkdirSync(baseDirPath, {recursive: true});
   }
-  const tmp = fs.mkdtempSync(`${baseDirPath}/`, { encoding: 'utf8' });
+  const tmp = fs.mkdtempSync(`${baseDirPath}/`, {encoding: 'utf8'});
 
   process.env['HOME'] = tmp;
   process.env['INPUT_BUNDLE-ID'] = process.env.BUNDLE_ID;
