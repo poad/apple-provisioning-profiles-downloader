@@ -1392,9 +1392,9 @@ data-urls@^2.0.0:
     whatwg-url "^8.0.0"
 
 date-format@^4.0.7:
-  version "4.0.7"
-  resolved "https://registry.yarnpkg.com/date-format/-/date-format-4.0.7.tgz#aa1cf4400badfe693c8462bbfcba43ab821d7d14"
-  integrity sha512-k5xqlzDGIfv2N/DHR/BR8Kc4N9CRy9ReuDkmdxeX/jNfit94QXd36emWMm40ZOEDKNm/c91yV9EO3uGPkR7wWQ==
+  version "4.0.9"
+  resolved "https://registry.yarnpkg.com/date-format/-/date-format-4.0.9.tgz#4788015ac56dedebe83b03bc361f00c1ddcf1923"
+  integrity sha512-+8J+BOUpSrlKLQLeF8xJJVTxS8QfRSuJgwxSVvslzgO3E6khbI0F5mMEPf5mTYhCCm4h99knYP6H3W9n3BQFrg==
 
 debug@4, debug@^4.1.0, debug@^4.1.1, debug@^4.3.2, debug@^4.3.4:
   version "4.3.4"
