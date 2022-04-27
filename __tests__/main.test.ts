@@ -4,6 +4,7 @@ import * as process from 'process';
 import fs from 'fs';
 import os from 'os';
 import {expect, test} from '@jest/globals';
+import 'source-map-support/register';
 
 test('test runs', async () => {
   const baseDirPath = path.join(os.tmpdir(), 'main');
