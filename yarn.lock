@@ -1022,13 +1022,13 @@ anymatch@^3.0.3:
     picomatch "^2.0.4"
 
 appstore-connect-jwt-generator-core@*:
-  version "1.1.10"
-  resolved "https://registry.yarnpkg.com/appstore-connect-jwt-generator-core/-/appstore-connect-jwt-generator-core-1.1.10.tgz#aa5fa8afc5001288a60bfdf4a41dedcd8dcceea0"
-  integrity sha512-P0M62g9xM85Msu6p+wAgGs4ClIKJ+0D1NW6UhcCYoE/OnPDpJkVRDK4ZE2yQ5j4rYeBdgU3DlvtNxGrqXSJNrA==
+  version "1.1.11"
+  resolved "https://registry.yarnpkg.com/appstore-connect-jwt-generator-core/-/appstore-connect-jwt-generator-core-1.1.11.tgz#fdb122792589d5e3838e3b7341d95af14a265e5c"
+  integrity sha512-QvegTdNiGdC0VywmUHnRMtiXxzfaEgJ1vIQflZVa+0oLnG9SoThaKLT07kx8dBv7x4kB1EDJ8d6Ioth0j10EMg==
   dependencies:
     "@types/jsonwebtoken" "^8.5.8"
     jsonwebtoken "^8.5.1"
-    log4js "^6.4.4"
+    log4js "^6.4.6"
     regenerator-runtime "^0.13.9"
 
 arg@^4.1.0:
@@ -2812,7 +2812,7 @@ lodash.upperfirst@4.3.1:
   resolved "https://registry.yarnpkg.com/lodash.upperfirst/-/lodash.upperfirst-4.3.1.tgz#1365edf431480481ef0d1c68957a5ed99d49f7ce"
   integrity sha1-E2Xt9DFIBIHvDRxolXpe2Z1J984=
 
-log4js@^6.4.4:
+log4js@^6.4.6:
   version "6.4.6"
   resolved "https://registry.yarnpkg.com/log4js/-/log4js-6.4.6.tgz#1878aa3f09973298ecb441345fe9dd714e355c15"
   integrity sha512-1XMtRBZszmVZqPAOOWczH+Q94AI42mtNWjvjA5RduKTSWjEc56uOBbyM1CJnfN4Ym0wSd8cQ43zOojlSHgRDAw==
