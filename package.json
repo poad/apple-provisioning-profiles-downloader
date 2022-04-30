@@ -81,7 +81,7 @@
     ],
     "transform": {
       "^.+\\.m?(t|j)sx?$": [
-        "ts-jest/legacy",
+        "ts-jest",
         {
           "jsc": {
             "parser": {
