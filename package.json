@@ -43,7 +43,7 @@
     "@swc/helpers": "^0.3.13",
     "@types/jest": "^27",
     "@types/jsonwebtoken": "^8.5.8",
-    "@types/node": "^17.0.31",
+    "@types/node": "^17.0.32",
     "@typescript-eslint/parser": "^5.23.0",
     "@vercel/ncc": "^0.33.4",
     "babel-jest": "^28",
