@@ -2874,15 +2874,15 @@ lodash.upperfirst@4.3.1:
   integrity sha1-E2Xt9DFIBIHvDRxolXpe2Z1J984=
 
 log4js@^6.4.6:
-  version "6.5.0"
-  resolved "https://registry.yarnpkg.com/log4js/-/log4js-6.5.0.tgz#b754a898f26f1d7db7c749c4685654848d89ec33"
-  integrity sha512-VT8b+k4nS7feV3p2nTdI5UqO2+7KRi4sfb6YKlnZlQU0d1DnvA18dvPhxKElgVTRTjS3GtChvvR67yMpp/xAfQ==
+  version "6.5.1"
+  resolved "https://registry.yarnpkg.com/log4js/-/log4js-6.5.1.tgz#06f771ae231c8e930ac2c7381242c8cdeff0dca1"
+  integrity sha512-z1hRRe5DDPzsP73PgN/GYmeSbIAl/g9kX3GLjABCpcU1ojns8S4cyjpJ21jU1P7z1wWkm69PjyMcEGqYYdDqaA==
   dependencies:
     date-format "^4.0.10"
     debug "^4.3.4"
     flatted "^3.2.5"
     rfdc "^1.3.0"
-    streamroller "^3.1.0"
+    streamroller "^3.1.1"
 
 lru-cache@^6.0.0:
   version "6.0.0"
@@ -3400,7 +3400,7 @@ stack-utils@^2.0.3:
   dependencies:
     escape-string-regexp "^2.0.0"
 
-streamroller@^3.1.0:
+streamroller@^3.1.1:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/streamroller/-/streamroller-3.1.1.tgz#679aae10a4703acdf2740755307df0a05ad752e6"
   integrity sha512-iPhtd9unZ6zKdWgMeYGfSBuqCngyJy1B/GPi/lTpwGpa3bajuX30GjUVd0/Tn/Xhg0mr4DOSENozz9Y06qyonQ==
