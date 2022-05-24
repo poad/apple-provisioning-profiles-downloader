@@ -3401,9 +3401,9 @@ stack-utils@^2.0.3:
     escape-string-regexp "^2.0.0"
 
 streamroller@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/streamroller/-/streamroller-3.1.0.tgz#99c6814708ad6ec9a6a2c2a4bb80cc794fa25556"
-  integrity sha512-9+fOFZX3qeo5lEdq9AnPxyRqdrh0MhlX5uqDN6+OLGuGK0PnyyKjMicwcUYIzjYRut5Pfbc0AV6WKdv6di3YGA==
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/streamroller/-/streamroller-3.1.1.tgz#679aae10a4703acdf2740755307df0a05ad752e6"
+  integrity sha512-iPhtd9unZ6zKdWgMeYGfSBuqCngyJy1B/GPi/lTpwGpa3bajuX30GjUVd0/Tn/Xhg0mr4DOSENozz9Y06qyonQ==
   dependencies:
     date-format "^4.0.10"
     debug "^4.3.4"
