@@ -50,7 +50,7 @@
     "babel-jest": "^28",
     "eslint": "^8.16.0",
     "eslint-plugin-github": "^4.3.6",
-    "eslint-plugin-jest": "^26.4.5",
+    "eslint-plugin-jest": "^26.4.6",
     "eslint-plugin-prettier": "^4.0.0",
     "jest": "^28",
     "js-yaml": "^4.1.0",
