@@ -42,7 +42,7 @@
     "@swc/cli": "^0.1.57",
     "@swc/core": "^1.2.196",
     "@swc/helpers": "^0.3.17",
-    "@types/jest": "^27",
+    "@types/jest": "^28",
     "@types/jsonwebtoken": "^8.5.8",
     "@types/node": "^17.0.38",
     "@typescript-eslint/parser": "^5.27.0",
