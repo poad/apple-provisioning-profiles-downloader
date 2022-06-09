@@ -326,7 +326,7 @@ export interface PagingInformation {
     };
 }
 export interface BundleIdsResponse {
-    data: BundleId[];
+    data?: BundleId[];
     included: (Profile | BundleIdCapability | App)[];
     links: PagedDocumentLinks;
     meta: PagingInformation;

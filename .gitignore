@@ -109,3 +109,4 @@ lib/**/*.map
 !node_modules/tunnel
 !node_modules/universalify
 test
+.DS_Store

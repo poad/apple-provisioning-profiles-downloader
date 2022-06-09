@@ -1,3 +1,4 @@
+import 'source-map-support/register'; 
 import {BundleIdsResponse} from './@types';
 import fetch from 'cross-fetch';
 import {tokenSync} from 'appstore-connect-jwt-generator-core';

@@ -15,7 +15,7 @@ jobs:
     steps:
     - name: 'Download Provisioning Profiles'
       id: provisioning
-      uses: poad/apple-provisioning-profiles-downloader@v1.0.5
+      uses: poad/apple-provisioning-profiles-downloader@v1.0.6
       with: 
         bundle-id: 'com.example.App'
         profile-type: 'IOS_APP_STORE'
@@ -36,7 +36,7 @@ jobs:
     steps:
     - name: 'Download Provisioning Profiles'
       id: provisioning
-      uses: poad/apple-provisioning-profiles-downloader@v1.0.5
+      uses: poad/apple-provisioning-profiles-downloader@v1.0.6
       with: 
         bundle-id: 'com.example.App'
         profile-type: 'IOS_APP_STORE'
