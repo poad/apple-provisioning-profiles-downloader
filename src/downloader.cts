@@ -40,7 +40,7 @@ const downloader = async (privateKey: string | Buffer, issuerId: string, apiKeyI
             include => include as Profile);
 
     if (
-        profiles.findIndex(
+        profiles?.findIndex(
             profile =>
                 profile.attributes.uuid !== undefined &&
                 profile.attributes.profileContent
@@ -56,9 +56,9 @@ const downloader = async (privateKey: string | Buffer, issuerId: string, apiKeyI
 
     await io.mkdirP(basePath);
 
-    core.info(`${profiles.length} profiles found.`);
+    core.info(`${profiles?.length} profiles found.`);
 
-    return Promise.all(profiles.map(profile => ({
+    return Promise.all(profiles?.map(profile => ({
             profile,
             fullPath: path.join(basePath, `${profile.attributes.uuid}.mobileprovision`),
             profileType: profile.attributes.profileType,
