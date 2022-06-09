@@ -22,7 +22,7 @@ const downloader = async (privateKey: string | Buffer, issuerId: string, apiKeyI
             'bundleId,certificates,createdDate,devices,expirationDate,name,platform,profileContent,profileState,profileType,uuid'
     });
 
-    const profileIds = response.data?.filter(
+    const profileIds = response.data.filter(
             value =>
                 value.attributes.identifier === bundleId &&
                 value.relationships.profiles !== undefined
@@ -30,10 +30,10 @@ const downloader = async (privateKey: string | Buffer, issuerId: string, apiKeyI
         .flatMap(bundle => bundle.relationships.profiles?.data)
         .map(data => (data ? data.id : undefined));
 
-    const profiles = response.included?.filter(
+    const profiles = response.included.filter(
             include =>
                 include.type === 'profiles' &&
-                profileIds?.includes(include.id) &&
+                profileIds.includes(include.id) &&
                 include.attributes.profileState === 'ACTIVE' &&
                 include.attributes.profileType === profileType
         )
@@ -58,7 +58,7 @@ const downloader = async (privateKey: string | Buffer, issuerId: string, apiKeyI
 
     core.info(`${profiles.length} profiles found.`);
 
-    return Promise.all(profiles?.map(profile => ({
+    return Promise.all(profiles.map(profile => ({
             profile,
             fullPath: path.join(basePath, `${profile.attributes.uuid}.mobileprovision`),
             profileType: profile.attributes.profileType,
