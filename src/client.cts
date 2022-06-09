@@ -1,8 +1,10 @@
-import 'source-map-support/register'; 
 import {BundleIdsResponse} from './@types';
 import fetch from 'cross-fetch';
 import {tokenSync} from 'appstore-connect-jwt-generator-core';
-
+import sourceMapSupport from 'source-map-support'
+sourceMapSupport.install({
+  environment: 'node'
+});
 interface IClient {
   listBundleIds: (query?: {
     [key: string]: string;

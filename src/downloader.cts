@@ -1,11 +1,13 @@
-import 'source-map-support/register';
 import * as core from '@actions/core';
 import * as fs from 'fs';
 import * as io from '@actions/io';
 import Client from './client.cjs';
 import { Profile } from './@types';
 import path from 'path';
-
+import sourceMapSupport from 'source-map-support'
+sourceMapSupport.install({
+    environment: 'node'
+});
 
 const downloader = async (privateKey: string | Buffer, issuerId: string, apiKeyId: string, duration: number | undefined, bundleId: string, profileType: string | undefined, basePath: string) => {
     const client = new Client({
@@ -58,7 +60,7 @@ const downloader = async (privateKey: string | Buffer, issuerId: string, apiKeyI
 
     core.info(`${profiles?.length} profiles found.`);
 
-    return Promise.all(profiles?.map(profile => ({
+    return profiles ? Promise.all(profiles?.map(profile => ({
             profile,
             fullPath: path.join(basePath, `${profile.attributes.uuid}.mobileprovision`),
             profileType: profile.attributes.profileType,
@@ -66,15 +68,14 @@ const downloader = async (privateKey: string | Buffer, issuerId: string, apiKeyI
             content: profile.attributes.profileContent
                 ? profile.attributes.profileContent
                 : ''
-        }))
-        .map(({ content, fullPath, profileType, name, profile }) => {
+        })).map(({ content, fullPath, profileType, name, profile }) => {
             const buffer = Buffer.from(content, 'base64');
             fs.writeFileSync(fullPath, buffer);
             core.info(
                 `Wrote ${profileType} profile '${name}' to '${fullPath}'.`
             );
             return profile;
-        }));
+        })) : [];
 };
 
 export default downloader;

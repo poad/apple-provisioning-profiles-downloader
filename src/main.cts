@@ -1,8 +1,11 @@
-import 'source-map-support/register';
 import * as core from '@actions/core';
 import * as fs from 'fs';
 import downloader from './downloader.cjs';
 import path from 'path';
+import sourceMapSupport from 'source-map-support'
+sourceMapSupport.install({
+  environment: 'node'
+});
 
 export const run = (): void => {
   try {
@@ -98,7 +101,7 @@ export const run = (): void => {
     })
       .catch((error) => {
         if (error instanceof Error) {
-          core.error(error);
+          core.error(error.stack ? error.stack : error);
           core.setFailed(error.message);
         } else {
           core.error(JSON.stringify(error));
@@ -107,7 +110,7 @@ export const run = (): void => {
       });
   } catch (error: unknown) {
     if (error instanceof Error) {
-      core.error(error);
+      core.error(error.stack ? error.stack : error);
       core.setFailed(error.message);
     } else {
       core.error(JSON.stringify(error));
