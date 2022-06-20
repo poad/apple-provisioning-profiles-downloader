@@ -2,7 +2,7 @@ import * as core from '@actions/core';
 import * as fs from 'fs';
 import downloader from './downloader.cjs';
 import path from 'path';
-import sourceMapSupport from 'source-map-support'
+import sourceMapSupport from 'source-map-support';
 sourceMapSupport.install({
   environment: 'node'
 });
@@ -87,19 +87,20 @@ export const run = (): void => {
       bundleId,
       profileType,
       basePath
-    ).then((profiles) => {
-      const output = JSON.stringify(
-        profiles.map(value => {
-          return {
-            name: value.attributes.name,
-            udid: value.attributes.uuid,
-            type: value.attributes.profileType?.toString()
-          };
-        })
-      );
-      core.setOutput('profiles', output);
-    })
-      .catch((error) => {
+    )
+      .then(profiles => {
+        const output = JSON.stringify(
+          profiles.map(value => {
+            return {
+              name: value.attributes.name,
+              udid: value.attributes.uuid,
+              type: value.attributes.profileType?.toString()
+            };
+          })
+        );
+        core.setOutput('profiles', output);
+      })
+      .catch(error => {
         if (error instanceof Error) {
           core.error(error.stack ? error.stack : error);
           core.setFailed(error.message);

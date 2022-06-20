@@ -4,17 +4,17 @@ import jwt from 'jsonwebtoken';
 import os from 'os';
 import path from 'path';
 
-import { expect, describe, it } from '@jest/globals';
+import {expect, describe, it} from '@jest/globals';
 import Client from '../lib/client.cjs';
-import { type BundleIdsResponse } from '../lib/@types';
+import {type BundleIdsResponse} from '../lib/@types';
 
 describe('client test', () => {
   it('token test', () => {
     const baseDirPath = path.join(os.tmpdir(), 'client');
     if (!fs.existsSync(baseDirPath)) {
-      fs.mkdirSync(baseDirPath, { recursive: true });
+      fs.mkdirSync(baseDirPath, {recursive: true});
     }
-    const tmp = fs.mkdtempSync(baseDirPath, { encoding: 'utf8' });
+    const tmp = fs.mkdtempSync(baseDirPath, {encoding: 'utf8'});
 
     process.env['HOME'] = tmp;
     const apiKeyId = process.env.API_KEY_ID!;
@@ -31,7 +31,7 @@ describe('client test', () => {
     expect(token).not.toBeUndefined();
     expect(token).not.toBeNull();
 
-    const decoded = jwt.decode(token, { json: true });
+    const decoded = jwt.decode(token, {json: true});
     expect(decoded).not.toBeNull();
     expect(decoded!.exp! - decoded!.iat!).toBe(500);
     expect(decoded!.iss!).toBe(issuerId);
@@ -40,9 +40,9 @@ describe('client test', () => {
   it('token test with list bundle ids', async () => {
     const baseDirPath = path.join(os.tmpdir(), 'client');
     if (!fs.existsSync(baseDirPath)) {
-      fs.mkdirSync(baseDirPath, { recursive: true });
+      fs.mkdirSync(baseDirPath, {recursive: true});
     }
-    const tmp = fs.mkdtempSync(`${baseDirPath}/`, { encoding: 'utf8' });
+    const tmp = fs.mkdtempSync(`${baseDirPath}/`, {encoding: 'utf8'});
 
     process.env['HOME'] = tmp;
     const bundleId = process.env.BUNDLE_ID!;
@@ -79,9 +79,9 @@ describe('client test', () => {
   it('token duration test', () => {
     const baseDirPath = path.join(os.tmpdir(), 'client');
     if (!fs.existsSync(baseDirPath)) {
-      fs.mkdirSync(baseDirPath, { recursive: true });
+      fs.mkdirSync(baseDirPath, {recursive: true});
     }
-    const tmp = fs.mkdtempSync(`${baseDirPath}/`, { encoding: 'utf8' });
+    const tmp = fs.mkdtempSync(`${baseDirPath}/`, {encoding: 'utf8'});
 
     process.env['HOME'] = tmp;
     const apiKeyId = process.env.API_KEY_ID!;
@@ -99,7 +99,7 @@ describe('client test', () => {
     expect(token).not.toBeUndefined();
     expect(token).not.toBeNull();
 
-    const decoded = jwt.decode(token, { json: true });
+    const decoded = jwt.decode(token, {json: true});
     expect(decoded).not.toBeNull();
     expect(decoded!.exp! - decoded!.iat!).toBe(600);
     expect(decoded!.iss!).toBe(issuerId);

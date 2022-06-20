@@ -1,4 +1,4 @@
-import { expect, describe, it } from '@jest/globals';
+import {expect, describe, it} from '@jest/globals';
 import * as cp from 'child_process';
 import * as path from 'path';
 import * as process from 'process';
@@ -9,9 +9,9 @@ describe('main test', () => {
   it('test runs', async () => {
     const baseDirPath = path.join(os.tmpdir(), 'main');
     if (!fs.existsSync(baseDirPath)) {
-      fs.mkdirSync(baseDirPath, { recursive: true });
+      fs.mkdirSync(baseDirPath, {recursive: true});
     }
-    const tmp = fs.mkdtempSync(`${baseDirPath}/`, { encoding: 'utf8' });
+    const tmp = fs.mkdtempSync(`${baseDirPath}/`, {encoding: 'utf8'});
 
     process.env['HOME'] = tmp;
     process.env['INPUT_BUNDLE-ID'] = process.env.BUNDLE_ID;
@@ -38,16 +38,17 @@ describe('main test', () => {
   it('test runs by file', () => {
     const baseDirPath = path.join(os.tmpdir(), 'main');
     if (!fs.existsSync(baseDirPath)) {
-      fs.mkdirSync(baseDirPath, { recursive: true });
+      fs.mkdirSync(baseDirPath, {recursive: true});
     }
-    const tmp = fs.mkdtempSync(`${baseDirPath}/`, { encoding: 'utf8' });
+    const tmp = fs.mkdtempSync(`${baseDirPath}/`, {encoding: 'utf8'});
 
     process.env['HOME'] = tmp;
     process.env['INPUT_BUNDLE-ID'] = process.env.BUNDLE_ID;
     process.env['INPUT_PROFILE-TYPE'] = process.env.PROFILE_TYPE;
     process.env['INPUT_ISSUER-ID'] = process.env.ISSUER_ID;
     process.env['INPUT_API-KEY-ID'] = process.env.API_KEY_ID;
-    process.env['INPUT_API-PRIVATE-KEY-FILE'] = process.env.API_PRIVATE_KEY_FILE;
+    process.env['INPUT_API-PRIVATE-KEY-FILE'] =
+      process.env.API_PRIVATE_KEY_FILE;
 
     process.env['ACTIONS_STEP_DEBUG'] = 'true';
 
@@ -67,9 +68,9 @@ describe('main test', () => {
   it('test runs with duration', () => {
     const baseDirPath = path.join(os.tmpdir(), 'main');
     if (!fs.existsSync(baseDirPath)) {
-      fs.mkdirSync(baseDirPath, { recursive: true });
+      fs.mkdirSync(baseDirPath, {recursive: true});
     }
-    const tmp = fs.mkdtempSync(`${baseDirPath}/`, { encoding: 'utf8' });
+    const tmp = fs.mkdtempSync(`${baseDirPath}/`, {encoding: 'utf8'});
 
     process.env['HOME'] = tmp;
     process.env['INPUT_BUNDLE-ID'] = process.env.BUNDLE_ID;

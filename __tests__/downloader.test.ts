@@ -3,7 +3,7 @@ import fs from 'fs';
 import os from 'os';
 import path from 'path';
 
-import { expect, describe, it } from '@jest/globals';
+import {expect, describe, it} from '@jest/globals';
 import downloader from '../lib/downloader.cjs';
 
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
