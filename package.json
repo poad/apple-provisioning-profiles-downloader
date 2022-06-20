@@ -40,7 +40,7 @@
   },
   "devDependencies": {
     "@swc/cli": "^0.1.57",
-    "@swc/core": "^1.2.203",
+    "@swc/core": "^1.2.204",
     "@swc/helpers": "^0.4.2",
     "@types/jest": "^28",
     "@types/jsonwebtoken": "^8.5.8",
