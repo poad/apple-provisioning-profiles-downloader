@@ -1157,7 +1157,7 @@ braces@^3.0.2:
   dependencies:
     fill-range "^7.0.1"
 
-browserslist@^4.12.0, browserslist@^4.20.2:
+browserslist@^4.20.2, browserslist@^4.21.0:
   version "4.21.0"
   resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-4.21.0.tgz#7ab19572361a140ecd1e023e2c1ed95edda0cefe"
   integrity sha512-UQxE0DIhRB5z/zDz9iA03BOfxaN2+GQdBYH/2WrSIWEUrnpzTPJbhqt+umq6r3acaPRTW1FNTkrcp0PXgtFkvA==
@@ -1533,11 +1533,11 @@ eslint-module-utils@^2.7.3:
     find-up "^2.1.0"
 
 eslint-plugin-escompat@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-escompat/-/eslint-plugin-escompat-3.1.0.tgz#e8d93d7e1d73715b248ee99f524b340f5c1bc3ce"
-  integrity sha512-Fon3eRv8fOQPZTjT3h8Ga85Xx7Eg+CNZBL7OIYSM2f+p3W4oXTxiSnFUbNDrayRBK3CQjG2dwR+iYeKDDSkXyA==
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-escompat/-/eslint-plugin-escompat-3.2.0.tgz#7d40efe8721d8fccb5d300f4fbda44f350a27301"
+  integrity sha512-obXAKKiZE/wB2fgIw0ZxCmp+8vpDsUw2inkaok1i7OVxY4cEds4Y9YCoky0f5V+q8rqZpTUJDv1R9ykWbXLX8Q==
   dependencies:
-    browserslist "^4.12.0"
+    browserslist "^4.21.0"
 
 eslint-plugin-eslint-comments@^3.2.0:
   version "3.2.0"
