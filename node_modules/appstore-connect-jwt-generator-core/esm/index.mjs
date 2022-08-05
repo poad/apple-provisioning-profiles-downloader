@@ -5,8 +5,7 @@ const signOption = (issuerId, privateKeyId, duration)=>({
         audience: 'appstoreconnect-v1',
         expiresIn: duration,
         issuer: issuerId
-    })
-;
+    });
 function jwtGenCore() {}
 export function tokenSync(privateKey, issuerId, privateKeyId, duration = 500) {
     return jwt.sign({}, privateKey, signOption(issuerId, privateKeyId, duration));
