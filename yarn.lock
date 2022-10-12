@@ -1610,9 +1610,9 @@ ecdsa-sig-formatter@1.0.11:
     safe-buffer "^5.0.1"
 
 electron-to-chromium@^1.4.251:
-  version "1.4.276"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.276.tgz#17837b19dafcc43aba885c4689358b298c19b520"
-  integrity sha512-EpuHPqu8YhonqLBXHoU6hDJCD98FCe6KDoet3/gY1qsQ6usjJoHqBH2YIVs8FXaAtHwVL8Uqa/fsYao/vq9VWQ==
+  version "1.4.279"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.279.tgz#84267fec806a8b1c5a1daebf726c4e296e5bcdf9"
+  integrity sha512-xs7vEuSZ84+JsHSTFqqG0TE3i8EAivHomRQZhhcRvsmnjsh5C2KdhwNKf4ZRYtzq75wojpFyqb62m32Oam57wA==
 
 emittery@^0.10.2:
   version "0.10.2"
@@ -1723,9 +1723,9 @@ eslint-module-utils@^2.7.3:
     debug "^3.2.7"
 
 eslint-plugin-escompat@^3.1.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-escompat/-/eslint-plugin-escompat-3.2.0.tgz#7d40efe8721d8fccb5d300f4fbda44f350a27301"
-  integrity sha512-obXAKKiZE/wB2fgIw0ZxCmp+8vpDsUw2inkaok1i7OVxY4cEds4Y9YCoky0f5V+q8rqZpTUJDv1R9ykWbXLX8Q==
+  version "3.3.3"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-escompat/-/eslint-plugin-escompat-3.3.3.tgz#81e30cc81f54772c8b65713c0579b6689b29c04d"
+  integrity sha512-rB3t15s0d504y3kwHotSt3wkFQG/dhS6SS5DIKL86mPILzoMcYeFN+hWim+Au7nvXGtkR1dOuq2sU5qKlOKhkA==
   dependencies:
     browserslist "^4.21.0"
 
