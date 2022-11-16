@@ -1,6 +1,6 @@
-export declare type BundleIdPlatform = 'IOS' | 'MAC_OS';
-export declare type ProfileType = 'IOS_APP_DEVELOPMENT' | 'IOS_APP_STORE' | 'IOS_APP_ADHOC' | 'IOS_APP_INHOUSE' | 'MAC_APP_DEVELOPMENT' | 'MAC_APP_STORE' | 'MAC_APP_DIRECT' | 'TVOS_APP_DEVELOPMENT' | 'TVOS_APP_STORE' | 'TVOS_APP_ADHOC' | 'TVOS_APP_INHOUSE' | 'MAC_CATALYST_APP_DEVELOPMENT' | 'MAC_CATALYST_APP_STORE' | 'MAC_CATALYST_APP_DIRECT';
-export declare type ProfileState = 'ACTIVE' | 'INVALID';
+export type BundleIdPlatform = 'IOS' | 'MAC_OS';
+export type ProfileType = 'IOS_APP_DEVELOPMENT' | 'IOS_APP_STORE' | 'IOS_APP_ADHOC' | 'IOS_APP_INHOUSE' | 'MAC_APP_DEVELOPMENT' | 'MAC_APP_STORE' | 'MAC_APP_DIRECT' | 'TVOS_APP_DEVELOPMENT' | 'TVOS_APP_STORE' | 'TVOS_APP_ADHOC' | 'TVOS_APP_INHOUSE' | 'MAC_CATALYST_APP_DEVELOPMENT' | 'MAC_CATALYST_APP_STORE' | 'MAC_CATALYST_APP_DIRECT';
+export type ProfileState = 'ACTIVE' | 'INVALID';
 export interface ResourceLinks {
     self: string;
 }
