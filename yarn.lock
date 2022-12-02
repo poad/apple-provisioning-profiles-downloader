@@ -2940,17 +2940,17 @@ kleur@^3.0.3:
   resolved "https://registry.yarnpkg.com/kleur/-/kleur-3.0.3.tgz#a79c9ecc86ee1ce3fa6206d1216c501f147fc07e"
   integrity sha512-eTIzlVOSUR+JxdDFepEYcBMtZ9Qqdef+rnzWdRZuMbOywu5tO2w2N7rqjoANZ5k9vywhL6Br1VRjUIgTQx4E8w==
 
-language-subtag-registry@~0.3.2:
+language-subtag-registry@^0.3.20:
   version "0.3.22"
   resolved "https://registry.yarnpkg.com/language-subtag-registry/-/language-subtag-registry-0.3.22.tgz#2e1500861b2e457eba7e7ae86877cbd08fa1fd1d"
   integrity sha512-tN0MCzyWnoz/4nHS6uxdlFWoUZT7ABptwKPQ52Ea7URk6vll88bWBVhodtnlfEuCcKWNGoc+uGbw1cwa9IKh/w==
 
 language-tags@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/language-tags/-/language-tags-1.0.5.tgz#d321dbc4da30ba8bf3024e040fa5c14661f9193a"
-  integrity sha512-qJhlO9cGXi6hBGKoxEG/sKZDAHD5Hnu9Hs4WbOY3pCWXDhw0N8x1NenNzm2EnNLkLkk7J2SdxAkDSbb6ftT+UQ==
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/language-tags/-/language-tags-1.0.6.tgz#c087cc42cd92eb71f0925e9e271d4f8be5a93430"
+  integrity sha512-HNkaCgM8wZgE/BZACeotAAgpL9FUjEnhgF0FVQMIgH//zqTPreLYMb3rWYkYAqPoF75Jwuycp1da7uz66cfFQg==
   dependencies:
-    language-subtag-registry "~0.3.2"
+    language-subtag-registry "^0.3.20"
 
 leven@^3.1.0:
   version "3.1.0"
