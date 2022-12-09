@@ -46,7 +46,7 @@
     "@types/jsonwebtoken": "^8.5.9",
     "@types/node": "^18.11.12",
     "@types/source-map-support": "^0.5.6",
-    "@typescript-eslint/parser": "^5.42.0",
+    "@typescript-eslint/parser": "^5.46.0",
     "@vercel/ncc": "^0.36.0",
     "babel-jest": "^29",
     "eslint": "^8.26.0",
