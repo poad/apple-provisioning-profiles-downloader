@@ -1701,9 +1701,9 @@ ecdsa-sig-formatter@1.0.11:
     safe-buffer "^5.0.1"
 
 electron-to-chromium@^1.4.284:
-  version "1.4.292"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.292.tgz#e3a3dca3780c8ce01e2c1866b5ec2fbe31c423e3"
-  integrity sha512-ESWOSyJy5odDlE8wvh5NNAMORv4r6assPwIPGHEMWrWD0SONXcG/xT+9aD9CQyeRwyYDPo6dJT4Bbeg5uevVQQ==
+  version "1.4.293"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.293.tgz#eaea755ad37a0f1759874a8597b33be62def2781"
+  integrity sha512-h7vBlhC83NsgC9UO3LOZx91xgstIrHk5iqMbZgnEArL5rHTM6HfsUZhnwb3oRnNetXM1741kB9SO7x9jLshz5A==
 
 emittery@^0.10.2:
   version "0.10.2"
