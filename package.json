@@ -57,7 +57,7 @@
     "jest": "^28",
     "js-yaml": "^4.1.0",
     "prettier": "2.8.4",
-    "rimraf": "^4.3.1",
+    "rimraf": "^4.4.0",
     "swc-loader": "^0.2.3",
     "ts-jest": "^28",
     "ts-node": "^10.9.1",
