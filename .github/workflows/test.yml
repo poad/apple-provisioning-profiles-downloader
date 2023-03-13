@@ -33,7 +33,7 @@ jobs:
 
       - name: Import iOS CodeSign Certificates
         if: github.actor != 'dependabot[bot]'
-        uses: Apple-Actions/import-codesign-certs@v1
+        uses: Apple-Actions/import-codesign-certs@v2
         with:
           create-keychain: true
           keychain-password: ${{ steps.develop-certificate.outputs.keychain-password }}
