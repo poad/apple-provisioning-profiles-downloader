@@ -61,7 +61,7 @@
     "swc-loader": "^0.2.3",
     "ts-jest": "^28",
     "ts-node": "^10.9.1",
-    "typescript": "^5.0.2"
+    "typescript": "^5.0.3"
   },
   "resolutions": {
     "jsonwebtoken": ">=9.0.0",
