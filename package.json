@@ -45,7 +45,7 @@
     "@swc/helpers": "^0.5.1",
     "@types/jest": "^28",
     "@types/jsonwebtoken": "^9.0.1",
-    "@types/node": "^20.2.5",
+    "@types/node": "^20.3.0",
     "@types/source-map-support": "^0.5.6",
     "@typescript-eslint/parser": "^5.59.9",
     "@vercel/ncc": "^0.36.1",
