@@ -20,7 +20,7 @@ if [ $result -ne 0 ]; then
 fi
 echo ""
 pwd
-yarn install && yarn upgrade && yarn format && yarn lint --fix && rm -rf dist && yarn build && yarn package && rm -rf node_modules && yarn install --production && git add dist node_modules -f
+pnpm install && pnpm up && pnpm format && pnpm lint --fix && rm -rf dist && pnpm build && pnpm package && rm -rf node_modules && pnpm install --production && git add dist node_modules -f
 result=$?
 if [ $result -ne 0 ]; then
   cd "${CUR}" || exit

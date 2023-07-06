@@ -16,18 +16,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v3
+
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        id: pnpm-install
+        with:
+          version: 8.6.3
+          run_install: |
+            - recursive: true
+              args: [--no-frozen-lockfile, --strict-peer-dependencies]
+
       - name: Set Node.js 16.x
         uses: actions/setup-node@v3
         with:
           node-version: 16.x
 
-      - uses: actions/checkout@v3
-
-      - name: Install dependencies
-        run: yarn install
-
       - name: Rebuild the dist/ directory
-        run: rm -rf dist && yarn build && yarn package
+        run: rm -rf dist && pnpm build && pnpm package
 
       - name: Compare the expected and actual dist/ directories
         run: |

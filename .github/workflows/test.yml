@@ -24,12 +24,20 @@ jobs:
     runs-on: macos-11
     steps:
       - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        id: pnpm-install
+        with:
+          version: 8.6.6
+          run_install: |
+            - recursive: true
+              args: [--no-frozen-lockfile, --strict-peer-dependencies]
+
       - name: Use Node.js 16.x
         uses: actions/setup-node@v3
         with:
           node-version: 16.x
           check-latest: true
-          cache: yarn
 
       - name: Import iOS CodeSign Certificates
         if: github.actor != 'dependabot[bot]'
@@ -40,10 +48,9 @@ jobs:
           p12-file-base64: ${{ secrets.DISTRIBUTION_CERTIFICATES_FILE_BASE64 }}
           p12-password: ${{ secrets.CERTIFICATES_PASSWORD }}
 
-      - run: yarn install
       - name: build
         if: github.actor == 'dependabot[bot]'
-        run: rm -rf bin node_modules && yarn install && yarn build && yarn format && yarn lint && yarn package
+        run: rm -rf bin node_modules && pnpm install && pnpm build && pnpm format && pnpm lint && pnpm package
       - name: unit test
         if: github.actor != 'dependabot[bot]'
         env:
@@ -52,7 +59,7 @@ jobs:
           ISSUER_ID: ${{ secrets.APPSTORE_ISSUER_ID }}
           API_KEY_ID: ${{ secrets.APPSTORE_KEY_ID }}
           API_PRIVATE_KEY: ${{ secrets.API_PRIVATE_KEY }}
-        run: rm -rf bin node_modules && yarn install && yarn build && yarn format && yarn lint && yarn package && yarn test
+        run: rm -rf bin node_modules && pnpm install && pnpm build && pnpm format && pnpm lint && pnpm package && pnpm test
 
   test:
     runs-on: macos-11
