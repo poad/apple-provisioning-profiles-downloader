@@ -129,7 +129,7 @@ jobs:
     steps:
     - name: Pull request auto merge enabler
       if: github.event_name == 'pull_request'
-      uses: poad/github-pull-request-auto-merge-enable-action@v1.0.4
+      uses: poad/github-pull-request-auto-merge-enable-action@v1.0.5
       with:
         pull_request_id: ${{ github.event.pull_request.node_id }}
         github_token: ${{ secrets.PERSONAL_TOKEN_FOR_GITHUB_ACTIONS }}
