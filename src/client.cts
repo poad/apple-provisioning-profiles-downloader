@@ -1,5 +1,4 @@
 import {BundleIdsResponse} from './@types';
-import fetch from 'cross-fetch';
 import {tokenSync} from 'appstore-connect-jwt-generator-core';
 import sourceMapSupport from 'source-map-support';
 sourceMapSupport.install({

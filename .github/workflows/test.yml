@@ -1,6 +1,6 @@
 name: 'build-test'
 on: # rebuild any PRs and main branch changes
-  pull_request_target:
+  pull_request:
     branches:
       - main
   push:
@@ -28,15 +28,14 @@ jobs:
         name: Install pnpm
         id: pnpm-install
         with:
-          version: 8.6.6
           run_install: |
             - recursive: true
               args: [--no-frozen-lockfile, --strict-peer-dependencies]
 
-      - name: Use Node.js 16.x
+      - name: Use Node.js 20.x
         uses: actions/setup-node@v3
         with:
-          node-version: 16.x
+          node-version: 20.x
           check-latest: true
 
       - name: Import iOS CodeSign Certificates
@@ -131,7 +130,7 @@ jobs:
       if: github.event_name == 'pull_request'
       uses: poad/github-pull-request-auto-merge-enable-action@v1.0.5
       with:
-        pull_request_id: ${{ github.event.pull_request.node_id }}
+        pull_request_number: ${{ github.event.pull_request.number }}
         github_token: ${{ secrets.PERSONAL_TOKEN_FOR_GITHUB_ACTIONS }}
         repository: ${{ github.event.repository.name }}
         owner: ${{ github.repository_owner }}

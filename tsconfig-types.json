@@ -5,12 +5,12 @@
     "transpiler": "ts-node/transpilers/swc-experimental"
   },
   "compilerOptions": {
-    "target": "ESNext",
+    "target": "esnext",
     "lib": [
       "DOM",
-      "ESNext"
+      "esnext"
     ],
-    "moduleResolution": "Node",
+    "moduleResolution": "node",
     "declaration": true,
     "declarationMap": true,
     "strict": true,

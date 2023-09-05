@@ -1,7 +1,10 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "lib": ["ESNext"],
+    "target": "esnext",
+    "lib": [
+      "DOM",
+      "esnext"
+    ],
     "module": "commonjs",
     "outDir": "./lib",
     "rootDir": "./src",
@@ -10,7 +13,7 @@
     "esModuleInterop": true,
     "isolatedModules": true,
     "inlineSourceMap": true,
-    "moduleResolution": "Node",
+    "moduleResolution": "node",
     "allowJs": true
   },
   "files": [

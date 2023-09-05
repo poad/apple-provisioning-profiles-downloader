@@ -32,7 +32,7 @@ jobs:
 
       - name: Slack Notification (not success)
         uses: lazy-actions/slatify@master
-        if: "! success()"
+        if: ${{ ! success() }}
         continue-on-error: true
         with:
           job_name: '*auto-merge*'
