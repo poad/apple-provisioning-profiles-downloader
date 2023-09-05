@@ -6,7 +6,7 @@ on:
       - main
     paths-ignore:
       - '**.md'
-  pull_request_target:
+  pull_request:
     paths-ignore:
       - '**.md'
   workflow_dispatch:
@@ -22,15 +22,14 @@ jobs:
         name: Install pnpm
         id: pnpm-install
         with:
-          version: 8.6.3
           run_install: |
             - recursive: true
               args: [--no-frozen-lockfile, --strict-peer-dependencies]
 
-      - name: Set Node.js 16.x
+      - name: Set Node.js 20.x
         uses: actions/setup-node@v3
         with:
-          node-version: 16.x
+          node-version: 20.x
 
       - name: Rebuild the dist/ directory
         run: rm -rf dist && pnpm build && pnpm package

@@ -16,7 +16,9 @@
     ],
     "ecmaVersion": "latest",
     "sourceType": "module",
-    "project": "./tsconfig-test.json"
+    "project": true,
+    "projectRoot": "__dirname",
+    "tsconfigRootDir": "__dirname"
   },
   "rules": {
     "semi": [
